@@ -1,6 +1,8 @@
 import getDate from 'date-fns/get_date';
-import {getDay as dayGet} from 'date-fns/get_day';
+import dayGet from 'date-fns/get_day';
 
 export const getDay = function getDay(date) {
-    return {};
+    return {
+        number: dayGet(date)
+    };
 }
