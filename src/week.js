@@ -10,7 +10,7 @@ const DAYS_IN_WEEK = 7;
  * @param {any} date 
  * @returns {Array} Dates
  */
-export function getWeek(date) {
+export function getWeekForDate(date) {
     return eachDay(startOfWeek(date), endOfWeek(date));
 }
 
@@ -19,30 +19,25 @@ export function getWeek(date) {
  * @param {any} date 
  * @returns {Date}
  */
-export function getNextWeek(date) {
+export function getDateInFollowingWeek(date) {
     return addDays(date, DAYS_IN_WEEK);
 }
 
 /**
  * @desc Returns a set of _n_ weeks, when given a start seed.
  * @export
- * @param {any} startDate 
+ * @param {any} date 
  * @param {any} numOfWeeks 
  * @returns {Array}
  */
-export function getNWeeks(startDate, numOfWeeks) {
+export function getNWeeks(date, numOfWeeks) {
 
-    if (!startDate) {
-        return [];
-    }
+    if (!date) { return []; }
 
-    return function getWeekSet(date, weekNum) {
-        const week = getWeek(date);
-        if (weekNum === numOfWeeks) {
-            return week;
-        } else {
-            return week.concat(getWeekSet(getNextWeek(date), ++weekNum));
-        }
-    }(startDate, 1);
+    const week = getWeekForDate(date);
+
+    return !numOfWeeks 
+        ? week 
+        : week.concat(getNWeeks(getDateInFollowingWeek(date), --numOfWeeks));
 
 }

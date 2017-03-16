@@ -1,3 +1,2 @@
 require('babel-register');
-
-// Code to debug
+require('./vs-code-debug/debug-start.js');
