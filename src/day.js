@@ -1,4 +1,3 @@
-import getDate from 'date-fns/get_date';
 import dayGet from 'date-fns/get_day';
 
 export const getDay = function getDay(date) {

@@ -7,5 +7,7 @@
       }
     }],
     "stage-0"
-  ]
+  ],
+  "sourceMaps": true,
+  "retainLines": true
 }
