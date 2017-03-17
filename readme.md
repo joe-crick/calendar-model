@@ -9,8 +9,6 @@ Calendar Model
 ![Current Version](https://img.shields.io/badge/version-0.0.12-green.svg)
 
 
-![Calendar Model](https://github.com/joe-crick/calendar-model/blob/master/static/calendar-model.png)
-
 THIS IS A WORK IN PROGRESS.
 
 Calendar Model is what it says it is: It models calendrical data. It generates sets of Date objects. Date objects decorate a JS Date instance with a few convenience methods, and an events property. The events property is an array that can contain an arbitrary collection of events. 
