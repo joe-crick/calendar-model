@@ -6,7 +6,8 @@ import { WEEKS_IN_MONTH } from '../config/calendar.config';
  * this returns a calendar month - i.e., 5 weeks/35 days. A calendar month includes days preceding and following
  * the actual days of the month.
  * 
- * @param {any} date 
+ * @export
+ * @param {any} {date, getEvents, formatDate} 
  * @returns {Array<Day>} An Array of Days
  */
 export function getCalendarMonth({date, getEvents, formatDate}) {
