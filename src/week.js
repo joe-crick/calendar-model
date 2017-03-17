@@ -14,9 +14,13 @@ export function getWeekForDate({date, getEvents, formatDate}) {
     return getRangeOfDates(startOfWeek(date), endOfWeek(date)).map(date => getDay({date, getEvents, formatDate}));
 }
 
+
 /**
- * @desc Returns the date one week later when given a date 
+ *  Returns the date one week later when given a date 
+ * 
+ * @export
  * @param {any} date 
+ * @param {any} [daysInWeek=DAYS_IN_WEEK()] 
  * @returns {Date}
  */
 export function getDateInFollowingWeek(date, daysInWeek=DAYS_IN_WEEK()) {
