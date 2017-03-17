@@ -1,6 +1,5 @@
 import format from 'date-fns/format';
 
-
 /**
  * @description Formats a date, by default in International format
  * 

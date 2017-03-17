@@ -23,7 +23,6 @@ export function getDateInFollowingWeek(date, daysInWeek=DAYS_IN_WEEK()) {
     return addDays(date, daysInWeek);
 }
 
-
 /**
  * @description Returns a set of _n_ weeks, when given a start seed.
  * 
@@ -32,7 +31,6 @@ export function getDateInFollowingWeek(date, daysInWeek=DAYS_IN_WEEK()) {
  * @returns {Array<Date>}
  */
 export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
-
     if (!date) { return []; }
 
     const week = getWeekForDate({date, getEvents, formatDate});
@@ -40,5 +38,4 @@ export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
     return !numOfWeeks 
         ? week 
         : week.concat(getNWeeks({date: getDateInFollowingWeek(date), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
-
 }
