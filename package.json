@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "tape-tests": "babel-tape-runner test.js | faucet",
-    "test": "npm-run-all tape-tests"
+    "test": "npm-run-all tape-tests",
+    "build": ""
   },
   "devDependencies": {
     "babel": "^6.23.0",

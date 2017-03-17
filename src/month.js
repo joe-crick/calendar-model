@@ -1,14 +1,14 @@
-import getMonth from 'date-fns/get_month';
+import { getNWeeks } from './week';
+import { WEEKS_IN_MONTH } from '../config/calendar.config';
 
-function getMonthRange(month, year) {
-    // Get the starting week, and grab weeks until we reach the end week
-    const monthRange = [];
-    return + function getWeeksUntilSentinel(month, weekNum, sentinel) {
-        const week = getWeek(month, weekNum);
-        if (weekNum === sentinel) {
-            return [week];
-        } else {
-            return monthRange.concat(getWeeksUntilSentinel());
-        }
-    }();
+
+/**
+ * @description CONSTRUCTOR: Convenience method. Returns a set of weeks for a predefined month range.
+ * 
+ * @param {any} month 
+ * @param {any} year 
+ * @returns 
+ */
+function getMonth(month, year) {
+    return getNWeeks(month, WEEKS_IN_MONTH);
 }

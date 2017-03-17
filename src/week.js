@@ -2,16 +2,16 @@ import startOfWeek from 'date-fns/start_of_week';
 import endOfWeek from 'date-fns/end_of_week';
 import eachDay from 'date-fns/each_day';
 import addDays from 'date-fns/add_days';
-
-const DAYS_IN_WEEK = 7;
+import getDay from './day';
+import {DAYS_IN_WEEK} from '../config/calendar.config';
 
 /**
  * @desc Creates an array of dates that corresponds to a week range
  * @param {any} date 
- * @returns {Array} Dates
+ * @returns {Array<Day>} Dates
  */
 export function getWeekForDate(date) {
-    return eachDay(startOfWeek(date), endOfWeek(date));
+    return eachDay(startOfWeek(date), endOfWeek(date)).map(date => getDay(date));
 }
 
 /**
@@ -28,7 +28,7 @@ export function getDateInFollowingWeek(date) {
  * @export
  * @param {any} date 
  * @param {any} numOfWeeks 
- * @returns {Array}
+ * @returns {Array<Day>}
  */
 export function getNWeeks(date, numOfWeeks) {
 
