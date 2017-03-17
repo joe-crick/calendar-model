@@ -1,4 +1,4 @@
-Pure CSS Components
+Calendar Model
 ==================
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/joe-crick/calendar-model.svg)](https://greenkeeper.io/)
