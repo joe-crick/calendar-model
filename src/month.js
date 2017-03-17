@@ -7,7 +7,7 @@ import { WEEKS_IN_MONTH } from '../config/calendar.config';
  * the actual days of the month.
  * 
  * @param {any} date 
- * @returns 
+ * @returns {Array<Day>} An Array of Days
  */
 export function getCalendarMonth({date, getEvents, formatDate}) {
     return getNWeeks({date, getEvents, formatDate, numOfWeeks: WEEKS_IN_MONTH()});
