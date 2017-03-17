@@ -9,7 +9,7 @@ import noOp from './no-op';
  * @export
  * @param {any} date A JS Date object, or valid Date string.
  * @param {Function} getEvents A function that returns a set of events when given a date object.
- * @param {Function} formatDate A function that returns a valid formatted date. Defaults to date-fns format function.
+ * @param {Function} formatDate A function that returns a valid formatted date. Defaults to date-fns format function, International date format.
  * @returns {Day} A Day object.
  */
 export default function getDay({date, getEvents=noOp, formatDate=format, toISOString=Date.prototype.toISOString}) {

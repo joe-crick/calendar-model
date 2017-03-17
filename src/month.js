@@ -1,7 +1,6 @@
 import { getNWeeks } from './week';
 import { WEEKS_IN_MONTH } from '../config/calendar.config';
 
-
 /**
  * @description CONSTRUCTOR: Convenience method. Returns a set of weeks for a predefined month range. Specifically,
  * this returns a calendar month - i.e., 5 weeks/35 days. A calendar month includes days preceding and following
@@ -10,6 +9,6 @@ import { WEEKS_IN_MONTH } from '../config/calendar.config';
  * @param {any} date 
  * @returns 
  */
-export function getCalendarMonth(date) {
-    return getNWeeks(date, WEEKS_IN_MONTH());
+export function getCalendarMonth({date, getEvents, formatDate}) {
+    return getNWeeks({date, getEvents, formatDate, numOfWeeks: WEEKS_IN_MONTH()});
 }

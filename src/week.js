@@ -10,8 +10,8 @@ import {DAYS_IN_WEEK} from '../config/calendar.config';
  * @param {any} date 
  * @returns {Array<Day>} Dates
  */
-export function getWeekForDate(date) {
-    return eachDay(startOfWeek(date), endOfWeek(date)).map(date => getDay({date}));
+export function getWeekForDate({date, getEvents, formatDate}) {
+    return eachDay(startOfWeek(date), endOfWeek(date)).map(date => getDay({date, getEvents, formatDate}));
 }
 
 /**
@@ -19,25 +19,26 @@ export function getWeekForDate(date) {
  * @param {any} date 
  * @returns {Date}
  */
-export function getDateInFollowingWeek(date, daysInWeek=7) {
+export function getDateInFollowingWeek(date, daysInWeek=DAYS_IN_WEEK()) {
     return addDays(date, daysInWeek);
 }
 
+
 /**
- * @desc Returns a set of _n_ weeks, when given a start seed.
+ * @description Returns a set of _n_ weeks, when given a start seed.
+ * 
  * @export
- * @param {any} date 
- * @param {any} numOfWeeks 
- * @returns {Array<Day>}
+ * @param {any} {date, getEvents, formatDate, numOfWeeks} 
+ * @returns {Array<Date>}
  */
-export function getNWeeks(date, numOfWeeks) {
+export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
 
     if (!date) { return []; }
 
-    const week = getWeekForDate(date);
+    const week = getWeekForDate({date, getEvents, formatDate});
 
     return !numOfWeeks 
         ? week 
-        : week.concat(getNWeeks(getDateInFollowingWeek(date), --numOfWeeks));
+        : week.concat(getNWeeks({date: getDateInFollowingWeek(date), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
 
 }
