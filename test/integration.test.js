@@ -10,7 +10,7 @@ test('Calendar Model: Events', nest => {
 
         const getEvents = makeEventFinder({ '01/03/2017': ['one', 'two', 'three'] });
         const week = getNWeeks({ date: TEST_DATE, getEvents, numOfWeeks: 0 });
-        assert.ok(week, 'should not be empty');
+        assert.ok(week[3].events, 'should not be empty');
         assert.end();
     });
 });
