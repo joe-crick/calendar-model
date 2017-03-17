@@ -1,11 +1,11 @@
 import test from 'tape';
-import { getMonth } from '../src/month';
+import { getCalendarMonth } from '../src/month';
 
 const TEST_DATE = '03.01.2017';
 
-test('Calendar Model: getMonth', nest => {
-    nest.test('Given a specific date, returns an array of the days for that week: Sun - Sat', assert => {
-        const month = getMonth(TEST_DATE);
+test('Calendar Model: Month', nest => {
+    nest.test('Given a month, returns a set of days corresponding to that calendar month', assert => {
+        const month = getCalendarMonth(TEST_DATE);
         assert.ok(month.length === 35, 'should be 35 days');
         assert.end();
     });

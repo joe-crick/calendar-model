@@ -1,5 +1,6 @@
 import format from './format';
 import {getDate} from './date';
+import noOp from './no-op';
 
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
@@ -11,13 +12,14 @@ import {getDate} from './date';
  * @param {Function} formatDate A function that returns a valid formatted date. Defaults to date-fns format function.
  * @returns {Day} A Day object.
  */
-export default function getDay({date, getEvents, formatDate=format, toISOString=Date.prototype.toISOString}) {
+export default function getDay({date, getEvents=noOp, formatDate=format, toISOString=Date.prototype.toISOString}) {
     const _date = getDate(date);
     return {
         date: _date,
         formattedDate: formatDate(_date),
         isoDate: toISOString.call(_date, _date),
         weekDayNumber: _date.getDay(),
+        dayOfMonth: _date.getDate(),
         events: getEvents(_date)
     };
 }

@@ -11,7 +11,7 @@ import {DAYS_IN_WEEK} from '../config/calendar.config';
  * @returns {Array<Day>} Dates
  */
 export function getWeekForDate(date) {
-    return eachDay(startOfWeek(date), endOfWeek(date)).map(date => getDay(date));
+    return eachDay(startOfWeek(date), endOfWeek(date)).map(date => getDay({date}));
 }
 
 /**
@@ -19,8 +19,8 @@ export function getWeekForDate(date) {
  * @param {any} date 
  * @returns {Date}
  */
-export function getDateInFollowingWeek(date) {
-    return addDays(date, DAYS_IN_WEEK);
+export function getDateInFollowingWeek(date, daysInWeek=7) {
+    return addDays(date, daysInWeek);
 }
 
 /**

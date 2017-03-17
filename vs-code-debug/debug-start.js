@@ -1,5 +1,5 @@
 // Code to debug
-import {getDay} from '../src/day';
+import {getDateInFollowingWeek} from '../src/week';
 
-const day = getDay('12.28.2017');
-console.log(day);
+const dayNextWeek = getDateInFollowingWeek('03.01.2017');
+console.log(dayNextWeek);
