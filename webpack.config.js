@@ -9,7 +9,10 @@ module.exports = {
     ],
     output: {
         path: resolve('dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        library: 'calendarModel',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     devtool: 'source-map',
     module: {

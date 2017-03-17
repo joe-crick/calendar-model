@@ -3,17 +3,6 @@ import {getDate} from './date';
 import noOp from './no-op';
 
 /**
- * 
- * 
- * @export
- * @param {any} date A JS Date object, or valid Date string.
- * @param {Function
- * @param {Function
- * 
- */
-
-
-/**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
  * methods that provide ISO Date, and Week Day Number. Also contains a set of Events for that day.
  * _getEvents-: A function that returns a set of events when given a date object.

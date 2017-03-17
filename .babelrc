@@ -9,5 +9,6 @@
     "stage-0"
   ],
   "sourceMaps": true,
-  "retainLines": true
+  "retainLines": true,
+  "plugins": ["babel-plugin-add-module-exports"]
 }

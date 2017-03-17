@@ -8,6 +8,6 @@ import format from './format';
  */
 export default function makeEventFinder(data){
     return function getEvents(date) {
-        return data[format(date)];
+        return data[format(date)] || [];
     };
 }
