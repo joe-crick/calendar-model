@@ -6,7 +6,7 @@ Calendar Model
 [![Build Status](https://travis-ci.org/joe-crick/calendar-model.svg?branch=master)](https://travis-ci.org/joe-crick/calendar-model)
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame.svg)](license.txt)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
-![Current Version](https://img.shields.io/badge/version-0.0.12-green.svg)
+![Current Version](https://img.shields.io/badge/version-0.0.1-green.svg)
 
 
 THIS IS A WORK IN PROGRESS.
