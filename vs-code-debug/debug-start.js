@@ -1,5 +1,5 @@
 // Code to debug
-import {getNWeeks} from '../src/week';
+import {getDay} from '../src/day';
 
-const month = getNWeeks('03.01.2017', 5);
-console.log(month);
+const day = getDay('12.28.2017');
+console.log(day);
