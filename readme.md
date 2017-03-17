@@ -55,5 +55,5 @@ To compile Calendar Model, run:
 npm run build
 ```
 
-The compiled, minified JS will be located in the `dist` folder.
+The compiled, minified JS will be located in the `dist` folder. JSDocs are located in the `out` folder.
 

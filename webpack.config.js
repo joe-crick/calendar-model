@@ -1,9 +1,8 @@
 /* eslint indent: 0 */
 
-const {
-    resolve
-} = require('path');
+const { resolve } = require('path');
 const webpack = require('webpack');
+const JsDocPlugin = require('jsdoc-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -25,5 +24,8 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js']
-    }
+    },
+    plugins: [
+        new JsDocPlugin({})
+    ]
 };
