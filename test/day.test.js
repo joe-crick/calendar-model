@@ -9,7 +9,7 @@ test('Calendar Model: Day', nest => {
         assert.ok(day, 'should not be empty');
         assert.end();
     });
-    nest.test('The day object contains the number of day in the week', assert => {
+    nest.test('The day object contains its week day number', assert => {
         const day = getDay(TEST_DAY);
         assert.ok(day.weekDayNumber === 3, 'should be 3');
         assert.end();
