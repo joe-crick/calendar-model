@@ -6,6 +6,7 @@
  * @returns {string} A formatted date
  */
 export default function formatDate(date) {
+    // TODO: Prettify
     const day = date.getDate() <= 9 ? `0${date.getDate()}` : date.getDate();
     let month = date.getMonth() + 1;
     month = month <= 9 ? `0${month}` : month;
