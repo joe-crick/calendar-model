@@ -4,6 +4,16 @@ import getRangeOfDates from 'date-fns/each_day';
 import addDays from 'date-fns/add_days';
 import getDay from './day';
 import {DAYS_IN_WEEK} from '../config/calendar.config';
+import numberToNameFinder from './name.finder';
+
+const WEEK_DAY_NAMES = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Thursday',
+    4: 'Friday',
+    5: 'Saturday'
+};
 
 /**
  * @desc Creates an array of dates that corresponds to a week range
@@ -42,4 +52,16 @@ export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
     return !numOfWeeks 
         ? week 
         : week.concat(getNWeeks({date: getDateInFollowingWeek(date), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
+}
+
+
+/**
+ * @description CONSTRUCTOR: Creates a function that returns Week DAy names.
+ * 
+ * @export
+ * @param {any} [weekDays={}] 
+ * @returns {Function} A function that returns a Week Day name when given a Week Day number
+ */
+export function weekDayNameFinder(weekDayNames=WEEK_DAY_NAMES) {
+    return numberToNameFinder(weekDayNames);
 }

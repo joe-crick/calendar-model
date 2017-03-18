@@ -1,5 +1,10 @@
 import { getNWeeks, getDateInFollowingWeek } from './week';
 import { WEEKS_IN_MONTH } from '../config/calendar.config';
+import numberToNameFinder from './name.finder';
+
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+];
 
 /**
  * @description CONSTRUCTOR: Convenience method. Returns a set of weeks for a predefined month range. Specifically,
@@ -33,4 +38,16 @@ export function getNestedCalendarMonth({date, getEvents, formatDate}) {
     }
  
     return weeks;
+}
+
+
+/**
+ * @description Returns a month name, when given a month number
+ * 
+ * @export
+ * @param {any} [monthNames=MONTH_NAMES] 
+ * @returns {string} A month name
+ */
+export function monthNameFinder(monthNames=MONTH_NAMES) {
+    return numberToNameFinder(monthNames);
 }

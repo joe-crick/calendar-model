@@ -1,5 +1,5 @@
 import test from 'tape';
-import { getNWeeks, getWeekForDate, getDateInFollowingWeek } from '../src/week';
+import { getNWeeks, getWeekForDate, getDateInFollowingWeek, weekDayNameFinder } from '../src/week';
 
 const TEST_DATE = '03.01.2017';
 
@@ -45,6 +45,15 @@ test('Calendar Model: getNWeeks', nest => {
     nest.test('End of range should be last day of last week', assert => {
         const week = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
         assert.ok(week[34].dayOfMonth === 1, 'should be 01.04.2017');
+        assert.end();
+    });
+});
+
+test('Calendar Model: getWeekDayName', nest => {
+    nest.test('Returns a name for a day of the week, when given a valid number', assert => {
+        const weekFinder = weekDayNameFinder();
+        const dayName = weekFinder(0);
+        assert.ok(dayName === 'Sunday', 'should be "Sunday"');
         assert.end();
     });
 });

@@ -1,6 +1,6 @@
 import getDay from './src/day';
-import {getNWeeks} from './src/week';
-import {getCalendarMonth} from './src/month';
+import {getNWeeks, weekDayNameFinder} from './src/week';
+import {getCalendarMonth, getNestedCalendarMonth, monthNameFinder} from './src/month';
 import makeEventFinder from './src/event';
 
 export default {
@@ -8,10 +8,13 @@ export default {
         getDay
     },
     week: {
-        getNWeeks
+        getNWeeks,
+        weekDayNameFinder
     },
     month: {
-        getCalendarMonth
+        getCalendarMonth,
+        getNestedCalendarMonth,
+        monthNameFinder
     },
     event: {
         makeEventFinder
