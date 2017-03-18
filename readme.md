@@ -27,7 +27,7 @@ npm i calendar-model -S
 
 ## Get Started
 
-You can view an example React app that uses `calendar-model` here [Calendar Model Demo](https://github/joe-crick/calendar-model-example).
+You can view an example React app that uses `calendar-model` here [Calendar Model Demo](https://github.com/joe-crick/calendar-model-example).
 
 ### Get Source
 
