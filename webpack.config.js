@@ -1,12 +1,12 @@
 /* eslint indent: 0 */
-
+const glob = require('glob');
 const { resolve } = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: [
-        './index.js'
-    ],
+    entry: {
+     js: glob.sync('./src/*.js')  
+    },
     output: {
         path: resolve('dist'),
         filename: 'bundle.js',

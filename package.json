@@ -33,7 +33,5 @@
     "tape": "^4.6.3",
     "webpack": "^2.2.1"
   },
-  "dependencies": {
-    "date-fns": "^1.28.0"
-  }
+  "dependencies": {}
 }

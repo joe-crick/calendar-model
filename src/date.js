@@ -1,5 +1,5 @@
-import parse from 'date-fns/parse';
-import isDate from 'date-fns/is_date';
+import parse from './date-utils/parse';
+import isDate from './date-utils/is_date';
 
 /**
  * @description Given a valid date string, or Date object, returns a Date object.
@@ -8,5 +8,5 @@ import isDate from 'date-fns/is_date';
  * @returns {Date}
  */
 export function getDate(date) {
-    return  isDate(date) ? date : parse(date);
+    return isDate(date) ? date : parse(date);
 }
