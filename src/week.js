@@ -54,12 +54,11 @@ export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
         : week.concat(getNWeeks({date: getDateInFollowingWeek(date), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
 }
 
-
 /**
- * @description CONSTRUCTOR: Creates a function that returns Week DAy names.
+ *  * @description CONSTRUCTOR: Creates a function that returns Week DAy names.
  * 
  * @export
- * @param {any} [weekDays={}] 
+ * @param {any} [weekDayNames=WEEK_DAY_NAMES] 
  * @returns {Function} A function that returns a Week Day name when given a Week Day number
  */
 export function weekDayNameFinder(weekDayNames=WEEK_DAY_NAMES) {
