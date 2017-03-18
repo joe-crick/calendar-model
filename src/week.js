@@ -3,7 +3,6 @@ import endOfWeek from './date-utils/end_of_week';
 import getRangeOfDates from './date-utils/get_range_of_dates';
 import addDays from './date-utils/add_days';
 import getDay from './day';
-import {DAYS_IN_WEEK} from '../config/calendar.config';
 import numberToNameFinder from './name.finder';
 
 const WEEK_DAY_NAMES = {
@@ -34,7 +33,7 @@ export function getWeekForDate({date, getEvents, formatDate}) {
  * @param {any} [daysInWeek=DAYS_IN_WEEK()] 
  * @returns {Date}
  */
-export function getDateInFollowingWeek(date, daysInWeek=DAYS_IN_WEEK()) {
+export function getDateInFollowingWeek(date, daysInWeek=7) {
     return addDays(date, daysInWeek);
 }
 
