@@ -13,7 +13,7 @@ THIS IS A WORK IN PROGRESS.
 
 Calendar Model is what it says it is: It models calendrical data. It generates sets of Date objects. Date objects decorate a JS Date instance with a few convenience methods, and an events property. The events property is an array that can contain an arbitrary collection of events. 
 
-Calendar Model is very small - 13kb.
+Calendar Model is very small ~ 14kb, minified.
 
 ### Install from NPM
 
