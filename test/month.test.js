@@ -6,7 +6,6 @@ const TEST_DATE = '03.01.2017';
 test('Calendar Model: Month', nest => {
     nest.test('Given a month, returns a set of days corresponding to that calendar month', assert => {
         const month = getCalendarMonth({date: TEST_DATE});
-        assert.comment('len: ' + month.length);
         assert.ok(month.length === 42, 'should be 35 days');
         assert.end();
     });
