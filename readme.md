@@ -1,19 +1,4 @@
-<!-- vscode-markdown-toc -->
-	* 1. [Install from NPM](#InstallfromNPM)
-	* 2. [Get Source](#GetSource)
-	* 3. [Installing](#Installing)
-	* 4. [Compile](#Compile)
-	* 5. [Basic Use](#BasicUse)
-		* 5.1. [Define the Model](#DefinetheModel)
-		* 5.2. [Define an Event Binder](#DefineanEventBinder)
-		* 5.3. [Define the Data's Presentation](#DefinetheDatasPresentation)
-	* 6. [Helper Methods](#HelperMethods)
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->Calendar Model
+Calendar Model
 ==================
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/joe-crick/calendar-model.svg)](https://greenkeeper.io/)
@@ -23,7 +8,17 @@
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Current Version](https://img.shields.io/badge/version-0.0.1-green.svg)
 
+# TOC
 
+	* 1. [Install from NPM](#InstallfromNPM)
+	* 2. [Get Source](#GetSource)
+	* 3. [Installing](#Installing)
+	* 4. [Compile](#Compile)
+	* 5. [Basic Use](#BasicUse)
+		* 5.1. [Define the Model](#DefinetheModel)
+		* 5.2. [Define an Event Binder](#DefineanEventBinder)
+		* 5.3. [Define the Data's Presentation](#DefinetheDatasPresentation)
+	* 6. [Helper Methods](#HelperMethods)
 
 # Simple Calendar Data
 
