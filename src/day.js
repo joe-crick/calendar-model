@@ -2,6 +2,7 @@ import format from './format';
 import {getDate} from './date';
 import noOp from './no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
+import addDays from './date-utils/add_days';
 
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
@@ -30,6 +31,7 @@ export default function getDay({date, getEvents=noOp, formatDate=format, toISOSt
  * @param {any} date 
  * @returns {Array<Day>} Dates
  */
-export function getNDays({startDate, endDate, getEvents, formatDate}) {
+export function getNDays({startDate, numOfDays, getEvents, formatDate}) {
+    const endDate = addDays(startDate, numOfDays);
     return getRangeOfDates(startDate, endDate).map(date => getDay({date, getEvents, formatDate}));
 }

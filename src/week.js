@@ -20,20 +20,20 @@ const WEEK_DAY_NAMES = {
  * @desc Creates an array of dates that corresponds to a week range
  * 
  * @export
- * @param {any} {date, getEvents, formatDate} 
+ * @param {any} {date, getEvents, formatDate, numOfDays} 
  * @returns {Array<Day>} Dates
  */
-export function getWeekForDate({date, getEvents, formatDate}) {
-    return getNDays({startDate: startOfWeek(date), endDate: endOfWeek(date), getEvents, formatDate});
+export function getWeekForDate({date, getEvents, formatDate, numOfDays=6}) {
+    return getNDays({startDate: startOfWeek(date), numOfDays, getEvents, formatDate});
 }
 
 /**
- *  Returns the date one week later when given a date 
+ * @description Returns the date one week later when given a date
  * 
  * @export
  * @param {any} date 
- * @param {any} [daysInWeek=DAYS_IN_WEEK()] 
- * @returns {Date}
+ * @param {number} [daysInWeek=7] 
+ * @returns 
  */
 export function getDateInFollowingWeek(date, daysInWeek=7) {
     return addDays(date, daysInWeek);

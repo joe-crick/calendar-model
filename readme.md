@@ -32,31 +32,9 @@ You can view an example React app that uses `calendar-model` here [Calendar Mode
 
 ### Setting up the Model
 
-Calendar Model receives requests for date ranges, and returns sets (Array) of Day objects that correspond to those date ranges. For example, a request for two weeks, using the default week setting, would return a set of 14 Day 
-objects. 
+Calendar Model receives requests for date ranges, and returns sets (Array) of Day objects that correspond to those date ranges. 
 
-#### Create a Basic Month-based Calendar, Without Events
-
-```js
-export default function getCalendarMonth({date});
-```
-
-#### Create a Basic Month-based Calendar that has Events
-
-```js
-export default function initCalendar(calendarData) {
-
-    // Creates a stateful function that maps events to days
-    const getEvents = makeEventFinder(calendarData);
-
-    return function getMonth(date) {
-        return getCalendarMonth({date, getEvents});
-    }
-
-}
-```
-
-#### Create a Week-based Calendar, Without Events
+#### Create a Week-count-based Calendar, Without Events
 
 ```js
 export default function getNWeeks({date, numOfWeeks});
@@ -67,7 +45,6 @@ export default function getNWeeks({date, numOfWeeks});
 ```js
 export default function initCalendar(calendarData) {
 
-    // Creates a stateful function that maps events to days
     const getEvents = makeEventFinder(calendarData);
 
     return function getMonth(date, numOfWeeks) {
@@ -76,7 +53,21 @@ export default function initCalendar(calendarData) {
 
 }
 ```
+The same pattern used to return a week-count-based calendar, can be used to create a day-count-based calendar:
 
+#### Create a Day-count-based Calendar, Without Events
+
+```js
+export default function getNDays({date, numOfWeeks});
+```
+
+There is also a Month-based convenience method, which returns five weeks by default. The month-based :
+
+#### Create a Day-count-based Calendar, Without Events
+
+```js
+export default function getNDays({date, numOfWeeks});
+```
 
 ### Get Source
 
