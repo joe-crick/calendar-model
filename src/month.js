@@ -1,11 +1,11 @@
-import { getNWeeks, getDateInFollowingWeek } from './week';
+import { getNWeeks, getNWeeksNested } from './week';
 import numberToNameFinder from './name.finder';
 
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const WEEKS_IN_MONTH =5;
+const WEEKS_IN_MONTH = 5;
 
 /**
  * @description CONSTRUCTOR: Convenience method. Returns a set of weeks for a predefined month range. Specifically,
@@ -29,15 +29,7 @@ export function getCalendarMonth({date, getEvents, formatDate, weeksInMonth=WEEK
  * @returns 
  */
 export function getNestedCalendarMonth({date, getEvents, formatDate, weeksInMonth=WEEKS_IN_MONTH}) {
-    const weeks = [];
-    let _date = date;
-
-    for(let week = 0; week < weeksInMonth; week++) {
-        weeks.push(getNWeeks({date: _date, getEvents, formatDate, numOfWeeks: 0}));
-        _date = getDateInFollowingWeek(_date);
-    }
- 
-    return weeks;
+    return getNWeeksNested({date, getEvents, formatDate, numOfWeeks: weeksInMonth});
 }
 
 

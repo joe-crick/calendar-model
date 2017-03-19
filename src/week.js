@@ -57,6 +57,25 @@ export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
 }
 
 /**
+ * @description Returns a nested array of Days. Each set of days is grouped in a week-long array.
+ * 
+ * @export
+ * @param {any} {date, getEvents, formatDate} 
+ * @returns 
+ */
+export function getNWeeksNested({date, getEvents, formatDate, numOfWeeks}) {
+    const weeks = [];
+    let _date = date;
+
+    for(let week = 0; week < numOfWeeks; week++) {
+        weeks.push(getNWeeks({date: _date, getEvents, formatDate, numOfWeeks: 0}));
+        _date = getDateInFollowingWeek(_date);
+    }
+ 
+    return weeks;
+}
+
+/**
  *  * @description CONSTRUCTOR: Creates a function that returns Week DAy names.
  * 
  * @export

@@ -1,5 +1,5 @@
 import test from 'tape';
-import { getNWeeks, getWeekForDate, getDateInFollowingWeek, weekDayNameFinder } from '../src/week';
+import { getNWeeks, getNWeeksNested, getWeekForDate, getDateInFollowingWeek, weekDayNameFinder } from '../src/week';
 
 const TEST_DATE = '03.01.2017';
 
@@ -33,18 +33,23 @@ test('Calendar Model: getNWeeks', nest => {
     const MONTH = 4;
 
     nest.test('Returns a range of Weeks', assert => {
-        const week = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
-        assert.ok(week.length === 35, 'should be 35 days');
+        const weeks = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
+        assert.ok(weeks.length === 35, 'should be 35 days');
         assert.end();
     });
     nest.test('Start of range should be first day of first week', assert => {
-        const week = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
-        assert.ok(week[0].dayOfMonth === 26, 'should be 26.02.2017');
+        const weeks = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
+        assert.ok(weeks[0].dayOfMonth === 26, 'should be 26.02.2017');
         assert.end();
     });
     nest.test('End of range should be last day of last week', assert => {
-        const week = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
-        assert.ok(week[34].dayOfMonth === 1, 'should be 01.04.2017');
+        const weeks = getNWeeks({date: TEST_DATE, numOfWeeks: MONTH});
+        assert.ok(weeks[34].dayOfMonth === 1, 'should be 01.04.2017');
+        assert.end();
+    });
+    nest.test('Given a week, returns a nested set of days each set corresponding to a week', assert => {
+        const weeks = getNWeeksNested({date: TEST_DATE, numOfWeeks: MONTH});
+        assert.ok(weeks.length === 4, 'should be 5 weeks');
         assert.end();
     });
 });
