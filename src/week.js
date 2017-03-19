@@ -1,6 +1,6 @@
 import startOfWeek from './date-utils/start_of_week';
 import endOfWeek from './date-utils/end_of_week';
-import getRangeOfDates from './date-utils/get_range_of_dates';
+import {getNDays} from './day';
 import addDays from './date-utils/add_days';
 import getDay from './day';
 import numberToNameFinder from './name.finder';
@@ -15,15 +15,17 @@ const WEEK_DAY_NAMES = {
     6: 'Saturday'
 };
 
+
 /**
  * @desc Creates an array of dates that corresponds to a week range
- * @param {any} date 
+ * 
+ * @export
+ * @param {any} {date, getEvents, formatDate} 
  * @returns {Array<Day>} Dates
  */
 export function getWeekForDate({date, getEvents, formatDate}) {
-    return getRangeOfDates(startOfWeek(date), endOfWeek(date)).map(date => getDay({date, getEvents, formatDate}));
+    return getNDays({startDate: startOfWeek(date), endDate: endOfWeek(date), getEvents, formatDate});
 }
-
 
 /**
  *  Returns the date one week later when given a date 
