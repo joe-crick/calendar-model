@@ -50,7 +50,7 @@ export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
 
     return !numOfWeeks 
         ? week 
-        : week.concat(getNWeeks({date: getDateInFollowingWeek(startDate), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
+        : week.concat(getNWeeks({startDate: getDateInFollowingWeek(startDate), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
 }
 
 /**
@@ -66,7 +66,7 @@ export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) 
     let _date = startDate;
 
     for(let week = 0; week < numOfWeeks; week++) {
-        weeks.push(getNWeeks({date: _date, getEvents, formatDate, numOfWeeks: 0}));
+        weeks.push(getNWeeks({startDate: _date, getEvents, formatDate, numOfWeeks: 0}));
         _date = getDateInFollowingWeek(_date);
     }
  
