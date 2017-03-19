@@ -28,7 +28,7 @@ The idea behind Calendar Model is simple: Make it easy to get and work with cale
 
 Calendar Model is implemented as a set of functions. These functions can be queried to return result sets. Each result set contains a collection \(Array\) of `Day` objects.
 
-> A `Day` object is a decorated JS `Date`. It extends `Date` with a few convenience methods, and an `events` \(Array\) property.
+> A `Day` object is a decorated JS `Date`. It extends `Date` with a few convenience methods, and an `events` property.
 >
 > An `event` is an arbitrary set of data \(Array\) associated with a `Day`.
 

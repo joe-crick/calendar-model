@@ -2,9 +2,8 @@ import parse from './date-utils/parse';
 import isDate from './date-utils/is_date';
 
 /**
- * @description Given a valid date string, or Date object, returns a Date object.
- * 
- * @param {any} date 
+ * @desc Given a valid date string, or Date object, returns a Date object.
+ * @param date
  * @returns {Date}
  */
 export function getDate(date) {

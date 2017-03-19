@@ -1,4 +1,5 @@
 import format from './format';
+
 /**
  * @description Given a data set where events can be obtained as date properties off an object, return the set of events
  * for a given date.

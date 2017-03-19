@@ -1,8 +1,6 @@
 import startOfWeek from './date-utils/start_of_week';
-import endOfWeek from './date-utils/end_of_week';
 import {getNDays} from './day';
 import addDays from './date-utils/add_days';
-import getDay from './day';
 import numberToNameFinder from './name.finder';
 
 const WEEK_DAY_NAMES = {
@@ -15,57 +13,57 @@ const WEEK_DAY_NAMES = {
     6: 'Saturday'
 };
 
-
 /**
  * @desc Creates an array of dates that corresponds to a week range
- * 
- * @export
- * @param {any} {date, getEvents, formatDate, numOfDays} 
- * @returns {Array<Day>} Dates
+ * @param startDate
+ * @param getEvents
+ * @param formatDate
+ * @param numOfDays
+ * @returns {Array.<Day>}
  */
-export function getWeekForDate({date, getEvents, formatDate, numOfDays=6}) {
-    return getNDays({startDate: startOfWeek(date), numOfDays, getEvents, formatDate});
+export function getWeekForDate({startDate, getEvents, formatDate, numOfDays=6}) {
+    return getNDays({startDate: startOfWeek(startDate), numOfDays, getEvents, formatDate});
 }
 
 /**
- * @description Returns the date one week later when given a date
- * 
- * @export
- * @param {any} date 
- * @param {number} [daysInWeek=7] 
- * @returns 
+ * @desc Returns the date one week later when given a date
+ * @param date
+ * @param daysInWeek
+ * @returns {Date}
  */
 export function getDateInFollowingWeek(date, daysInWeek=7) {
     return addDays(date, daysInWeek);
 }
 
 /**
- * @description Returns a set of _n_ weeks, when given a start seed.
- * 
- * @export
- * @param {any} {date, getEvents, formatDate, numOfWeeks} 
- * @returns {Array<Date>}
+ * @desc Returns a set of _n_ weeks, when given a start seed.
+ * @param startDate
+ * @param getEvents
+ * @param formatDate
+ * @param numOfWeeks
+ * @returns {*}
  */
-export function getNWeeks({date, getEvents, formatDate, numOfWeeks}) {
-    if (!date) { return []; }
+export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
+    if (!startDate) { return []; }
 
-    const week = getWeekForDate({date, getEvents, formatDate});
+    const week = getWeekForDate({startDate, getEvents, formatDate});
 
     return !numOfWeeks 
         ? week 
-        : week.concat(getNWeeks({date: getDateInFollowingWeek(date), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
+        : week.concat(getNWeeks({date: getDateInFollowingWeek(startDate), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
 }
 
 /**
- * @description Returns a nested array of Days. Each set of days is grouped in a week-long array.
- * 
- * @export
- * @param {any} {date, getEvents, formatDate} 
- * @returns 
+ * @desc Returns a nested array of Days. Each set of days is grouped in a week-long array.
+ * @param startDate
+ * @param getEvents
+ * @param formatDate
+ * @param numOfWeeks
+ * @returns {Array}
  */
-export function getNWeeksNested({date, getEvents, formatDate, numOfWeeks}) {
+export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) {
     const weeks = [];
-    let _date = date;
+    let _date = startDate;
 
     for(let week = 0; week < numOfWeeks; week++) {
         weeks.push(getNWeeks({date: _date, getEvents, formatDate, numOfWeeks: 0}));
@@ -76,11 +74,8 @@ export function getNWeeksNested({date, getEvents, formatDate, numOfWeeks}) {
 }
 
 /**
- *  * @description CONSTRUCTOR: Creates a function that returns Week DAy names.
- * 
- * @export
- * @param {any} [weekDayNames=WEEK_DAY_NAMES] 
- * @returns {Function} A function that returns a Week Day name when given a Week Day number
+ * @desc CONSTRUCTOR: Creates a function that returns Week DAy names.
+ * @param {any} weekDayNames
  */
 export function weekDayNameFinder(weekDayNames=WEEK_DAY_NAMES) {
     return numberToNameFinder(weekDayNames);
