@@ -9,20 +9,29 @@ Calendar Model
 ![Current Version](https://img.shields.io/badge/version-0.0.1-green.svg)
 
 
-# Calendar Model: Simple Calendar Data
+# Simple Calendar Data
 
-The idea behind Calendar Model is simple: Make it easy to get and work with calendrical data. Calendar Model  only cares about the data, leaving the presentation of the data up to you.
 
-Calendar Model generates Sets \(Arrays\) of `Day` objects. A `Day` object is a decorated JS `Date`. It extends `Date` with a few convenience methods, and an `events` \(Array\) property.
+The idea behind Calendar Model is simple: Make it easy to get and work with calendrical data. Calendar Model only cares about the data, leaving the presentation of the data up to you. In addition, while Calendar Model provides default implementations for all its functionality, you can override most of the defaults.
 
-Calendar Model can create two types of `sets`:
+Calendar Model is implemented as a set of functions. These functions can be queried to return result sets. Each result set contains a collection \(Array\) of `Day` objects.
 
-* Flat: A one-dimensional Arr
+> A `Day` object is a decorated JS `Date`. It extends `Date` with a few convenience methods, and an `events` \(Array\) property.
+>
+> An `event` is an arbitrary set of data \(Array\) associated with a `Day`.
+
+Calendar Model exposes functions that return the following categories of result sets:
+
+* Month \(by default 5 weeks\)
+* Week \(by default 7 days\)
+* Day
+
+Month and Week expose functions that can create two types of `sets`:
+
+* Flat: A one-dimensional Array
 * Nested: A two-dimensional Array. Nested `sets` are useful when you want a collection of Week `sets`.
 
 Day queries only return Flat sets.
-
-An `event` is an arbitrary set of data associated with a `Day`.Calendar Model comes with a default event binder, or you can provide your own. You can create calendars with, or without, events.
 
 
 ### Install from NPM
@@ -63,7 +72,6 @@ npm run build
 
 The build transpiles the JS, and creates docs. The transpiled JS will be located in the `lib` folder. Docs are located in the `doc` folder.
 
-
 ### Basic Use
 
 A basic calendar can be created with the following steps:
@@ -76,7 +84,7 @@ Consult the [sample application](https://github.com/joe-crick/calendar-model-exa
 
 #### Define the Model
 
-Because Calendar Model is a collection of functions, there are a number of ways you can define a given implementation of Calendar Model. You only need to include those functions you will be using in your application. You can use them as stan-alone functions, or add them as methods to an object. Below are a few examples:
+Because Calendar Model is a collection of functions, there are a number of ways you can define a given implementation of Calendar Model. You only need to include those functions you will be using in your application. You can use them as stand-alone functions, or add them as methods to an object. Below are a few examples:
 
 ##### Create a Week-based Calendar, without Events
 
@@ -122,7 +130,7 @@ export default function getMonth({date});
 
 #### Define an Event Binder
 
-Each `Day` in a result set returned by Calendar Model contains an `events` property. The `events` property can store an arbitrary set \(Array\) of data. Event data lives outside of the Calendar Model, and is merged in to `Day`s when a result set is generated.
+Each `Day` in a result set returned by Calendar Model contains an `events` property. The `events` property can store an arbitrary set \(Array\) of data. Event data lives outside of the Calendar Model, and is one-way, one-time bound to `Day`s when a result set is generated.
 
 For example, given the following event data format:
 
@@ -132,7 +140,7 @@ For example, given the following event data format:
 }
 ```
 
-The following Event Binder module would associate events with the appropriate days:
+The following Event Binder module would bind events to the appropriate days:
 
 ```js
 function makeEventFinder(eventData){
@@ -142,7 +150,7 @@ function makeEventFinder(eventData){
 }
 ```
 
-The above is, in fact, Calendar Model's default Event Binder, which can be overridden.
+The above code is, in fact, Calendar Model's default Event Binder, which can be overridden.
 
 #### Define the Data's Presentation
 
