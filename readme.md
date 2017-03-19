@@ -1,4 +1,19 @@
-Calendar Model
+<!-- vscode-markdown-toc -->
+	* 1. [Install from NPM](#InstallfromNPM)
+	* 2. [Get Source](#GetSource)
+	* 3. [Installing](#Installing)
+	* 4. [Compile](#Compile)
+	* 5. [Basic Use](#BasicUse)
+		* 5.1. [Define the Model](#DefinetheModel)
+		* 5.2. [Define an Event Binder](#DefineanEventBinder)
+		* 5.3. [Define the Data's Presentation](#DefinetheDatasPresentation)
+	* 6. [Helper Methods](#HelperMethods)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->Calendar Model
 ==================
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/joe-crick/calendar-model.svg)](https://greenkeeper.io/)
@@ -9,8 +24,8 @@ Calendar Model
 ![Current Version](https://img.shields.io/badge/version-0.0.1-green.svg)
 
 
-# Simple Calendar Data
 
+# Simple Calendar Data
 
 The idea behind Calendar Model is simple: Make it easy to get and work with calendrical data. Calendar Model only cares about the data, leaving the presentation of the data up to you. In addition, while Calendar Model provides default implementations for all its functionality, you can override most of the defaults.
 
@@ -34,7 +49,7 @@ Month and Week expose functions that can create two types of `sets`:
 Day queries only return Flat sets.
 
 
-### Install from NPM
+###  1. <a name='InstallfromNPM'></a>Install from NPM
 
 ```
 yarn add calendar-model
@@ -44,13 +59,13 @@ or
 npm i calendar-model -S
 ```
 
-### Get Source
+###  2. <a name='GetSource'></a>Get Source
 
 ```
 git clone https://github.com/joe-crick/calendar-model.git
 ```
 
-### Installing
+###  3. <a name='Installing'></a>Installing
 
 Once you've cloned the repo, install dependencies
 
@@ -62,7 +77,7 @@ or
 npm i
 ```
 
-### Compile
+###  4. <a name='Compile'></a>Compile
 
 To compile Calendar Model, run:
 
@@ -72,7 +87,7 @@ npm run build
 
 The build transpiles the JS, and creates docs. The transpiled JS will be located in the `lib` folder. Docs are located in the `doc` folder.
 
-### Basic Use
+###  5. <a name='BasicUse'></a>Basic Use
 
 A basic calendar can be created with the following steps:
 
@@ -82,7 +97,7 @@ A basic calendar can be created with the following steps:
 
 Consult the [sample application](https://github.com/joe-crick/calendar-model-example) to see a working example of Calendar Model.
 
-#### Define the Model
+####  5.1. <a name='DefinetheModel'></a>Define the Model
 
 Because Calendar Model is a collection of functions, there are a number of ways you can define a given implementation of Calendar Model. You only need to include those functions you will be using in your application. You can use them as stand-alone functions, or add them as methods to an object. Below are a few examples:
 
@@ -128,7 +143,7 @@ There is also a Month-based convenience method, which returns five weeks by defa
 export default function getMonth({date});
 ```
 
-#### Define an Event Binder
+####  5.2. <a name='DefineanEventBinder'></a>Define an Event Binder
 
 Each `Day` in a result set returned by Calendar Model contains an `events` property. The `events` property can store an arbitrary set \(Array\) of data. Event data lives outside of the Calendar Model, and is one-way, one-time bound to `Day`s when a result set is generated.
 
@@ -152,7 +167,7 @@ function makeEventFinder(eventData){
 
 The above code is, in fact, Calendar Model's default Event Binder, which can be overridden.
 
-#### Define the Data's Presentation
+####  5.3. <a name='DefinetheDatasPresentation'></a>Define the Data's Presentation
 
 You can present the calendar data in whatever format you like. Below is an example of rendering a month-based calendar using JSX:
 
@@ -186,7 +201,7 @@ You can present the calendar data in whatever format you like. Below is an examp
 </table>
 ```
 
-### Helper Methods
+###  6. <a name='HelperMethods'></a>Helper Methods
 
 Calendar Model exposes several helper methods, which it also uses internally:
 
