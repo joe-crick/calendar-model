@@ -10,15 +10,15 @@ Calendar Model
 
 # TOC
 
-	* 1. [Install from NPM](#InstallfromNPM)
-	* 2. [Get Source](#GetSource)
-	* 3. [Installing](#Installing)
-	* 4. [Compile](#Compile)
-	* 5. [Basic Use](#BasicUse)
-		* 5.1. [Define the Model](#DefinetheModel)
-		* 5.2. [Define an Event Binder](#DefineanEventBinder)
-		* 5.3. [Define the Data's Presentation](#DefinetheDatasPresentation)
-	* 6. [Helper Methods](#HelperMethods)
+* 1. [Install from NPM](#InstallfromNPM)
+* 2. [Get Source](#GetSource)
+* 3. [Installing](#Installing)
+* 4. [Compile](#Compile)
+* 5. [Basic Use](#BasicUse)
+    * 5.1. [Define the Model](#DefinetheModel)
+    * 5.2. [Define an Event Binder](#DefineanEventBinder)
+    * 5.3. [Define the Data's Presentation](#DefinetheDatasPresentation)
+* 6. [Helper Methods](#HelperMethods)
 
 # Simple Calendar Data
 
