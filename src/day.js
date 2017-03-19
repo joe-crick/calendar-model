@@ -10,10 +10,10 @@ import addDays from './date-utils/add_days';
  * _getEvents-: A function that returns a set of events when given a date object.
  * _formatDate_: A function that returns a valid formatted date. Defaults to date-fns format function, International date format.
  *
- * @param date
- * @param getEvents
- * @param formatDate
- * @param toISOString
+ * @param {String | Date} date
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @param {Function} toISOString
  * @returns {{date: Date, formattedDate: string, isoDate: *, weekDayNumber: number, dayOfMonth: number, events}}
  */
 export default function getDay({date, getEvents=noOp, formatDate=format, toISOString=Date.prototype.toISOString}) {
@@ -30,11 +30,11 @@ export default function getDay({date, getEvents=noOp, formatDate=format, toISOSt
 
 /**
  * @desc Creates an array of dates that corresponds to a range
- * @param startDate
- * @param numOfDays
- * @param getEvents
- * @param formatDate
- * @returns {*}
+ * @param {String | Date} startDate
+ * @param {number} numOfDays
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @returns {Array<Day>}
  */
 export function getNDays({startDate, numOfDays, getEvents, formatDate}) {
     const endDate = addDays(startDate, numOfDays);

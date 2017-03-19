@@ -11,11 +11,11 @@ const WEEKS_IN_MONTH = 5;
  * @description CONSTRUCTOR: Convenience method. Returns a set of weeks for a predefined month range. Specifically,
  * this returns a calendar month - i.e., 5 weeks/35 days. A calendar month includes days preceding and following
  * the actual days of the month.
- * @param startDate
- * @param getEvents
- * @param formatDate
- * @param weeksInMonth
- * @returns {*}
+ * @param {String | Date} startDate
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @param {number} weeksInMonth
+ * @returns {Array<Day>}
  */
 export function getCalendarMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
   return getNWeeks({startDate, getEvents, formatDate, numOfWeeks: weeksInMonth});
@@ -25,10 +25,10 @@ export function getCalendarMonth({startDate, getEvents, formatDate, weeksInMonth
 /**
  * @description Returns a nested array of Days. Each set of days is grouped in a week-long array.
  *
- * @param startDate
- * @param getEvents
- * @param formatDate
- * @param weeksInMonth
+ * @param {String | Date} startDate
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @param {number} weeksInMonth
  * @returns {Array}
  */
 export function getNestedCalendarMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {

@@ -1,7 +1,7 @@
 /**
  * @description Meta function for finding a name based on a number.
  *
- * @param nameSet
+ * @param {Object} nameSet
  * @returns {getName}
  */
 export default function numToNameFinder(nameSet) {

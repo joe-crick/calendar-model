@@ -15,10 +15,10 @@ const WEEK_DAY_NAMES = {
 
 /**
  * @desc Creates an array of dates that corresponds to a week range
- * @param startDate
- * @param getEvents
- * @param formatDate
- * @param numOfDays
+ * @param {String | Date} startDate
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @param {number} numOfDays
  * @returns {Array.<Day>}
  */
 export function getWeekForDate({startDate, getEvents, formatDate, numOfDays=6}) {
@@ -27,8 +27,8 @@ export function getWeekForDate({startDate, getEvents, formatDate, numOfDays=6}) 
 
 /**
  * @desc Returns the date one week later when given a date
- * @param date
- * @param daysInWeek
+ * @param {Date} date
+ * @param {number} daysInWeek
  * @returns {Date}
  */
 export function getDateInFollowingWeek(date, daysInWeek=7) {
@@ -37,11 +37,11 @@ export function getDateInFollowingWeek(date, daysInWeek=7) {
 
 /**
  * @desc Returns a set of _n_ weeks, when given a start seed.
- * @param startDate
- * @param getEvents
- * @param formatDate
- * @param numOfWeeks
- * @returns {*}
+ * @param {String | Date} startDate
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @param {number} numOfWeeks
+ * @returns {Array<Day>}
  */
 export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
     if (!startDate) { return []; }
@@ -55,10 +55,10 @@ export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
 
 /**
  * @desc Returns a nested array of Days. Each set of days is grouped in a week-long array.
- * @param startDate
- * @param getEvents
- * @param formatDate
- * @param numOfWeeks
+ * @param {String | Date} startDate
+ * @param {Function} getEvents
+ * @param {Function} formatDate
+ * @param {number} numOfWeeks
  * @returns {Array}
  */
 export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) {
