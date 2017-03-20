@@ -3,7 +3,8 @@ import {
   getNWeeks,
   getNWeeksNested,
   getWeekForDate,
-  getDateInFollowingWeek,
+  getNextWeek,
+  getPrevWeek,
   weekDayNameFinder,
   getWeekNumber
 } from '../src/week';
@@ -28,10 +29,15 @@ test('Calendar Model: getWeek', nest => {
   });
 });
 
-test('Calendar Model: getNextWeek', nest => {
+test('Calendar Model: Navigate weeks', nest => {
   nest.test('Returns a date 7 days in the future', assert => {
-    const dayNextWeek = getDateInFollowingWeek(TEST_DATE);
+    const dayNextWeek = getNextWeek(TEST_DATE);
     assert.ok(dayNextWeek.getDate() === 8, 'should be the 8th');
+    assert.end();
+  });
+  nest.test('Returns the previous week', assert => {
+    const dayLastWeek = getPrevWeek(new Date(TEST_DATE));
+    assert.ok(dayLastWeek.getDate() === 22, 'should be 9');
     assert.end();
   });
 });
@@ -73,7 +79,6 @@ test('Calendar Model: getWeekDayName', nest => {
 test('Calendar Model: getWeekNumber', nest => {
   nest.test('Returns a the number of week in the year for a given week', assert => {
     const weekNumber = getWeekNumber(new Date(TEST_DATE));
-    assert.comment(weekNumber);
     assert.ok(weekNumber === 9, 'should be 9');
     assert.end();
   });

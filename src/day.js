@@ -2,7 +2,7 @@ import format from './format';
 import {getDate} from './date';
 import noOp from './no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
-import addDays from './date-utils/add_days';
+import addDays from './date-utils/adjust_days';
 
 // TODO: Do we provide a way to get time slots for a given day? If so, we should only provide it
 // for single week and day views.

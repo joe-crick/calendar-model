@@ -1,6 +1,6 @@
 import startOfWeek from './date-utils/start_of_week';
 import {getNDays} from './day';
-import addDays from './date-utils/add_days';
+import adjustDays from './date-utils/adjust_days';
 import _getWeekNumber from './date-utils/get_week_number';
 import numberToNameFinder from './name.finder';
 
@@ -32,8 +32,18 @@ export function getWeekForDate({startDate, getEvents, formatDate, numOfDays=6}) 
  * @param {number} daysInWeek
  * @returns {Date}
  */
-export function getDateInFollowingWeek(date, daysInWeek=7) {
-    return addDays(date, daysInWeek);
+export function getNextWeek(date, daysInWeek=7) {
+    return adjustDays(date, daysInWeek);
+}
+
+/**
+ * @desc Returns the date one week earlier when given a date
+ * @param date
+ * @param daysInWeek
+ * @returns {Date}
+ */
+export function getPrevWeek(date, daysInWeek=-7) {
+  return adjustDays(date, daysInWeek);
 }
 
 /**
@@ -51,7 +61,7 @@ export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
 
     return !numOfWeeks 
         ? week 
-        : week.concat(getNWeeks({startDate: getDateInFollowingWeek(startDate), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
+        : week.concat(getNWeeks({startDate: getNextWeek(startDate), getEvents, formatDate, numOfWeeks: --numOfWeeks}));
 }
 
 /**
@@ -68,7 +78,7 @@ export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) 
 
     for(let week = 0; week < numOfWeeks; week++) {
         weeks.push(getNWeeks({startDate: _date, getEvents, formatDate, numOfWeeks: 0}));
-        _date = getDateInFollowingWeek(_date);
+        _date = getNextWeek(_date);
     }
  
     return weeks;

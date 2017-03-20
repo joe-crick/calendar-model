@@ -211,4 +211,4 @@ Calendar Model exposes several helper methods, which it also uses internally:
 * `formatDate`: Formats a date in International format \(DD/MM/YYYY\).
 * `monthNameFinder`: Returns the text name for a given month.
 * `weekDayNameFinder`: Returns the text name for a given week.
-* `getDateInFollowingWeek`: Given a seed date, returns a date 7 days in the future.
+* `getNextWeek`: Given a seed date, returns a date 7 days in the future.

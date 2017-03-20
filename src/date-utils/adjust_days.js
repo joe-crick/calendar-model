@@ -14,14 +14,14 @@ var parse = require('./parse.js');
  *
  * @example
  * // Add 10 days to 1 September 2014:
- * var result = addDays(new Date(2014, 8, 1), 10)
+ * var result = adjustDays(new Date(2014, 8, 1), 10)
  * //=> Thu Sep 11 2014 00:00:00
  */
-function addDays(dirtyDate, dirtyAmount) {
+function adjustDays(dirtyDate, dirtyAmount) {
     var date = parse(dirtyDate);
     var amount = dirtyAmount >> 0;
     date.setDate(date.getDate() + amount);
     return date;
 }
 
-module.exports = addDays;
+module.exports = adjustDays;
