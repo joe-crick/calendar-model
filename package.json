@@ -11,8 +11,8 @@
     "test": "npm-run-all tape-tests",
     "build:js": "babel src --out-dir lib",
     "build:dev": "webpack",
-    "build:docs": "esdoc",
-    "build": "npm-run-all build:js"
+    "build:docs": "documentation build ./src/*.js -f md -o docs",
+    "build": "npm-run-all build:js build:docs"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -23,6 +23,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.24.0",
     "babel-tape-runner": "^2.0.1",
+    "documentation": "^4.0.0-beta.18",
     "esdoc": "^0.5.2",
     "eslint": "^3.17.1",
     "extend-tape": "^1.2.0",

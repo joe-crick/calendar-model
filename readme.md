@@ -82,7 +82,7 @@ To compile Calendar Model, run:
 npm run build
 ```
 
-The build transpiles the JS, and creates docs. The transpiled JS will be located in the `lib` folder. Docs are located in the `doc` folder.
+The build transpiles the JS, and creates docs. The transpiled JS will be located in the `lib` folder. Docs are located in the `docs` folder.
 
 ###  5. <a name='BasicUse'></a>Basic Use
 

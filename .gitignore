@@ -2,6 +2,5 @@ node_modules
 lib
 .vscode
 npm-debug.log
-doc
 *.xml
 .idea
