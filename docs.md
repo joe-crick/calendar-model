@@ -15,6 +15,8 @@
 -   [getCalendarMonth](#getcalendarmonth)
 -   [getNestedCalendarMonth](#getnestedcalendarmonth)
 -   [monthNameFinder](#monthnamefinder)
+-   [getNextMonth](#getnextmonth)
+-   [getPrevMonth](#getprevmonth)
 -   [numToNameFinder](#numtonamefinder)
 -   [getWeekForDate](#getweekfordate)
 -   [getNextWeek](#getnextweek)
@@ -180,9 +182,29 @@ Returns a month name, when given a month number
 
 **Parameters**
 
--   `monthNames` **any?= MONTH_NAMES** 
+-   `monthNames` **\[any]?= MONTH_NAMES** 
 
-Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **getName** 
+
+## getNextMonth
+
+Returns the following month in a 12-month calendar
+
+**Parameters**
+
+-   `dirtyDate`  
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+## getPrevMonth
+
+Returns the previous month in a 12-month calendar
+
+**Parameters**
+
+-   `dirtyDate`  
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 ## numToNameFinder
 
