@@ -17,6 +17,17 @@ export function getTwelveHourTime(slot) {
 }
 
 /**
+ * @desc Converts 24 hour time to 12 hour time
+ * @param time
+ * @return {string}
+ */
+export function twentyFourToTwelveHourTime(time) {
+  const slot = time.substring(0,2) >> 0;
+  const timePeriod = getTimePeriod(slot);
+  return `${formatTimeSlot(getTwelveHourTime(slot))}:00 ${timePeriod}`;
+}
+
+/**
  * @desc Given a value from 0 - n, returns the associated time period
  * @param slot
  * @returns {string}

@@ -31,4 +31,9 @@ test('Calendar Model: Hours', nest => {
     assert.ok(lastHour === '23:00', 'Last hour should be 23:00');
     assert.end();
   });
+  nest.test('Should return the correct 12 hour time', assert => {
+    const twelveHourTime = hours.twentyFourToTwelveHourTime('18:00');
+    assert.ok(twelveHourTime === '06:00 PM', 'should be 06:00 PM');
+    assert.end();
+  });
 });
