@@ -1,6 +1,7 @@
 import startOfWeek from './date-utils/start_of_week';
 import {getNDays} from './day';
 import addDays from './date-utils/add_days';
+import _getWeekNumber from './date-utils/get_week_number';
 import numberToNameFinder from './name.finder';
 
 const WEEK_DAY_NAMES = {
@@ -79,4 +80,12 @@ export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) 
  */
 export function weekDayNameFinder(weekDayNames=WEEK_DAY_NAMES) {
     return numberToNameFinder(weekDayNames);
+}
+
+/**
+ * @desc Proxy for getWeekNumber
+ * @param date
+ */
+export function getWeekNumber(date){
+  return _getWeekNumber(date);
 }
