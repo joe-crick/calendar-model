@@ -1,6 +1,7 @@
 var parse = require('./parse.js');
 
 /**
+ * @private
  * @category Day Helpers
  * @summary Add the specified number of days to the given date.
  *

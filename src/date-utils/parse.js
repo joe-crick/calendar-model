@@ -41,6 +41,7 @@ var parseTokenTimezoneHH = /^([+-])(\d{2})$/;
 var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/;
 
 /**
+ * @private
  * @category Common Helpers
  * @summary Convert the given argument to an instance of Date.
  *

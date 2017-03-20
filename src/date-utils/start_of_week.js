@@ -1,6 +1,7 @@
 var parse = require('./parse.js');
 
 /**
+ * @private
  * @category Week Helpers
  * @summary Return the start of a week for the given date.
  *

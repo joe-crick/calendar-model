@@ -3,11 +3,8 @@
 ### Table of Contents
 
 -   [getDate](#getdate)
--   [parse](#parse)
--   [isDate](#isdate)
 -   [getDay](#getday)
 -   [getNDays](#getndays)
--   [getRangeOfDates](#getrangeofdates)
 -   [makeEventFinder](#makeeventfinder)
 -   [formatDate](#formatdate)
 -   [formatTimeSlot](#formattimeslot)
@@ -24,8 +21,6 @@
 -   [getNWeeks](#getnweeks)
 -   [getNWeeksNested](#getnweeksnested)
 -   [weekDayNameFinder](#weekdaynamefinder)
--   [startOfWeek](#startofweek)
--   [addDays](#adddays)
 
 ## getDate
 
@@ -36,62 +31,6 @@ Given a valid date string, or Date object, returns a Date object.
 -   `date` **([String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date))** 
 
 Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
-
-## parse
-
-Convert the given argument to an instance of Date.
-
-If the argument is an instance of Date, the function returns its clone.
-
-If the argument is a number, it is treated as a timestamp.
-
-If an argument is a string, the function tries to parse it.
-Function accepts complete ISO 8601 formats as well as partial implementations.
-ISO 8601: <http://en.wikipedia.org/wiki/ISO_8601>
-
-If all above fails, the function passes the given argument to Date constructor.
-
-**Parameters**
-
--   `argument` **([Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))** the value to convert
--   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?** the object with options
-    -   `options.additionalDigits` **(`0` \| `1` \| `2`)?** the additional number of digits in the extended year format (optional, default `2`)
--   `dirtyOptions`  
-
-**Examples**
-
-```javascript
-// Convert string '2014-02-11T11:30:30' to date:
-var result = parse('2014-02-11T11:30:30')
-//=> Tue Feb 11 2014 11:30:30
-```
-
-```javascript
-// Parse string '+02014101',
-// if the additional number of digits in the extended year format is 1:
-var result = parse('+02014101', {additionalDigits: 1})
-//=> Fri Apr 11 2014 00:00:00
-```
-
-Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** the parsed date in the local time zone
-
-## isDate
-
-Is the given argument an instance of Date?
-
-**Parameters**
-
--   `argument` **any** the argument to check
-
-**Examples**
-
-```javascript
-// Is 'mayonnaise' a Date?
-var result = isDate('mayonnaise')
-//=> false
-```
-
-Returns **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** the given argument is an instance of Date
 
 ## getDay
 
@@ -131,38 +70,6 @@ Creates an array of dates that corresponds to a range
     -   `$0.formatDate`  
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Day>** 
-
-## getRangeOfDates
-
-Return the array of dates within the specified range.
-
-**Parameters**
-
--   `startDate` **([Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))** the first date
--   `endDate` **([Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))** the last date
--   `dirtyStartDate`  
--   `dirtyEndDate`  
-
-**Examples**
-
-```javascript
-// Each day between 6 October 2014 and 10 October 2014:
-var result = eachDay(
-  new Date(2014, 9, 6),
-  new Date(2014, 9, 10)
-)
-//=> [
-//   Mon Oct 06 2014 00:00:00,
-//   Tue Oct 07 2014 00:00:00,
-//   Wed Oct 08 2014 00:00:00,
-//   Thu Oct 09 2014 00:00:00,
-//   Fri Oct 10 2014 00:00:00
-// ]
-```
-
--   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** startDate cannot be after endDate
-
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)>** the array with starts of days from the day of startDate to the day of endDate
 
 ## makeEventFinder
 
@@ -357,53 +264,3 @@ CONSTRUCTOR: Creates a function that returns Week DAy names.
 **Parameters**
 
 -   `weekDayNames` **any?= WEEK_DAY_NAMES** 
-
-## startOfWeek
-
-Return the start of a week for the given date.
-The result will be in the local timezone.
-
-**Parameters**
-
--   `date` **([Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))** the original date
--   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?** the object with options
-    -   `options.weekStartsOn` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** the index of the first day of the week (0 - Sunday) (optional, default `0`)
--   `dirtyDate`  
--   `dirtyOptions`  
-
-**Examples**
-
-```javascript
-// The start of a week for 2 September 2014 11:55:00:
-var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0))
-//=> Sun Aug 31 2014 00:00:00
-```
-
-```javascript
-// If the week starts on Monday, the start of the week for 2 September 2014 11:55:00:
-var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
-//=> Mon Sep 01 2014 00:00:00
-```
-
-Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** the start of a week
-
-## addDays
-
-Add the specified number of days to the given date.
-
-**Parameters**
-
--   `date` **([Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))** the date to be changed
--   `amount` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the amount of days to be added
--   `dirtyDate`  
--   `dirtyAmount`  
-
-**Examples**
-
-```javascript
-// Add 10 days to 1 September 2014:
-var result = addDays(new Date(2014, 8, 1), 10)
-//=> Thu Sep 11 2014 00:00:00
-```
-
-Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** the new date with the days added

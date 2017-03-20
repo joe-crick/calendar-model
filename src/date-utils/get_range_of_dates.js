@@ -1,6 +1,7 @@
 var parse = require('./parse.js');
 
 /**
+ * @private
  * @category Day Helpers
  * @summary Return the array of dates within the specified range.
  *
