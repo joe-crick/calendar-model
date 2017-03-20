@@ -45,11 +45,6 @@ _getEvents-: A function that returns a set of events when given a date object.
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `toISOString` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.date`  
-    -   `$0.getEvents`   (optional, default `noOp`)
-    -   `$0.formatDate`   (optional, default `format`)
-    -   `$0.toISOString`   (optional, default `Date.prototype.toISOString`)
 
 Returns **{date: [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), formattedDate: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), isoDate: any, weekDayNumber: [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), dayOfMonth: [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), events}** 
 
@@ -63,11 +58,6 @@ Creates an array of dates that corresponds to a range
 -   `numOfDays` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.startDate`  
-    -   `$0.numOfDays`  
-    -   `$0.getEvents`  
-    -   `$0.formatDate`  
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Day>** 
 
@@ -146,11 +136,6 @@ the actual days of the month.
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `weeksInMonth` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.startDate`  
-    -   `$0.getEvents`  
-    -   `$0.formatDate`  
-    -   `$0.weeksInMonth`   (optional, default `WEEKS_IN_MONTH`)
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Day>** 
 
@@ -164,11 +149,6 @@ Returns a nested array of Days. Each set of days is grouped in a week-long array
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `weeksInMonth` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.startDate`  
-    -   `$0.getEvents`  
-    -   `$0.formatDate`  
-    -   `$0.weeksInMonth`   (optional, default `WEEKS_IN_MONTH`)
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
 
@@ -202,11 +182,6 @@ Creates an array of dates that corresponds to a week range
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `numOfDays` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.startDate`  
-    -   `$0.getEvents`  
-    -   `$0.formatDate`  
-    -   `$0.numOfDays`   (optional, default `6`)
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Day>** 
 
@@ -231,11 +206,6 @@ Returns a set of _n_ weeks, when given a start seed.
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `numOfWeeks` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.startDate`  
-    -   `$0.getEvents`  
-    -   `$0.formatDate`  
-    -   `$0.numOfWeeks`  
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Day>** 
 
@@ -249,11 +219,6 @@ Returns a nested array of Days. Each set of days is grouped in a week-long array
 -   `getEvents` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `formatDate` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `numOfWeeks` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.startDate`  
-    -   `$0.getEvents`  
-    -   `$0.formatDate`  
-    -   `$0.numOfWeeks`  
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
 
