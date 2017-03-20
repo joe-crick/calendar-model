@@ -65,6 +65,6 @@ export function getNextMonth(dirtyDate) {
  */
 export function getPrevMonth(dirtyDate) {
   const date = parse(dirtyDate);
-  const currentMonth = date.getMonth() + 1;
-  return currentMonth > 1 ? (currentMonth - 1) : 12
+  const currentMonth = date.getMonth();
+  return (currentMonth + 1) > 1 ? currentMonth : 12
 }

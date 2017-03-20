@@ -9,7 +9,7 @@
   "scripts": {
     "tape-tests": "babel-tape-runner test.js | faucet",
     "test": "npm-run-all tape-tests",
-    "build:js": "babel src --out-dir lib",
+    "build:js": "babel src -s --out-dir lib",
     "build:dev": "webpack",
     "build:docs": "documentation build ./src/*.js --a undefined -f md -o docs.md",
     "build": "npm-run-all build:js build:docs"

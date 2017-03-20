@@ -9,6 +9,7 @@
 -   [formatDate](#formatdate)
 -   [formatTimeSlot](#formattimeslot)
 -   [getTwelveHourTime](#gettwelvehourtime)
+-   [twentyFourToTwelveHourTime](#twentyfourtotwelvehourtime)
 -   [getTimePeriod](#gettimeperiod)
 -   [getTwelveHourTimeSlots](#gettwelvehourtimeslots)
 -   [getTwentyFourHourTimeSlots](#gettwentyfourhourtimeslots)
@@ -115,6 +116,16 @@ Given a value from 0 - n, returns the correct Twelve-hour time number
 -   `slot`  
 
 Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+## twentyFourToTwelveHourTime
+
+Converts 24 hour time to 12 hour time
+
+**Parameters**
+
+-   `time`  
+
+Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ## getTimePeriod
 
@@ -240,7 +251,7 @@ Returns the date one week later when given a date
 
 **Parameters**
 
--   `date` **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
+-   `dirtyDate`  
 -   `daysInWeek` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?= 7** 
 
 Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
@@ -251,7 +262,7 @@ Returns the date one week earlier when given a date
 
 **Parameters**
 
--   `date`  
+-   `dirtyDate`  
 -   `daysInWeek`  
 
 Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
