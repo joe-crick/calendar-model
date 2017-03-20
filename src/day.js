@@ -4,6 +4,9 @@ import noOp from './no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
 import addDays from './date-utils/add_days';
 
+// TODO: Do we provide a way to get time slots for a given day? If so, we should only provide it
+// for single week and day views.
+
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
  * methods that provide ISO Date, and Week Day Number. Also contains a set of Events for that day.

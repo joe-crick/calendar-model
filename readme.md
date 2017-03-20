@@ -142,7 +142,12 @@ export default function getMonth({date});
 
 ####  5.2. <a name='DefineanEventBinder'></a>Define an Event Binder
 
-Each `Day` in a result set returned by Calendar Model contains an `events` property. The `events` property can store an arbitrary set \(Array\) of data. Event data lives outside of the Calendar Model, and is one-way, one-time bound to `Day`s when a result set is generated.
+Each `Day` in a result set returned by Calendar Model contains an `events` property. The `events` property can store
+an arbitrary set \(Array\) of data. Event data lives outside of the Calendar Model, and is one-way, one-time bound to
+`Day`s.
+
+Event binding occurs when a `Day` is created. The constructor calls the `getEvents` function to populate the contents
+of the event. The `Day`s inner `Date` instance is passed as an argument to the `getEvents` function.
 
 For example, given the following event data format:
 
@@ -152,7 +157,7 @@ For example, given the following event data format:
 }
 ```
 
-The following Event Binder module would bind events to the appropriate days:
+The following Event Binder would bind events to the appropriate days:
 
 ```js
 function makeEventFinder(eventData){
@@ -166,7 +171,8 @@ The above code is, in fact, Calendar Model's default Event Binder, which can be 
 
 ####  5.3. <a name='DefinetheDatasPresentation'></a>Define the Data's Presentation
 
-You can present the calendar data in whatever format you like. Below is an example of rendering a month-based calendar using JSX:
+You can present the calendar data in whatever format you like. Below is an example of rendering a month-based
+calendar using JSX (when presenting tabular data for multiple weeks, use a nested result set)::
 
 ```jsx
 <table className="calendar-example">
