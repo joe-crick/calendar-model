@@ -11,7 +11,7 @@
     "test": "npm-run-all tape-tests",
     "build:js": "babel src --out-dir lib",
     "build:dev": "webpack",
-    "build:docs": "documentation build ./src/*.js -f md -o docs",
+    "build:docs": "documentation build ./src/*.js -f md -o docs.md",
     "build": "npm-run-all build:js build:docs"
   },
   "devDependencies": {
