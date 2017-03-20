@@ -1,5 +1,6 @@
 import {getNWeeks, getNWeeksNested} from './week';
 import numberToNameFinder from './name.finder';
+import parse from './date-utils/parse';
 
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
@@ -39,9 +40,31 @@ export function getNestedCalendarMonth({startDate, getEvents, formatDate, weeksI
 /**
  * @description Returns a month name, when given a month number
  *
- * @param {any} monthNames
- * @returns {Function}
+ * @param {[*]} monthNames
+ * @returns {getName}
  */
 export function monthNameFinder(monthNames = MONTH_NAMES) {
   return numberToNameFinder(monthNames);
+}
+
+/**
+ * @desc Returns the following month in a 12-month calendar
+ * @return {number}
+ * @param dirtyDate
+ */
+export function getNextMonth(dirtyDate) {
+  const date = parse(dirtyDate);
+  const currentMonth = date.getMonth() + 1;
+  return currentMonth < 12 ? (currentMonth + 1) : 1
+}
+
+/**
+ * @desc Returns the previous month in a 12-month calendar
+ * @return {number}
+ * @param dirtyDate
+ */
+export function getPrevMonth(dirtyDate) {
+  const date = parse(dirtyDate);
+  const currentMonth = date.getMonth() + 1;
+  return currentMonth > 1 ? (currentMonth - 1) : 12
 }

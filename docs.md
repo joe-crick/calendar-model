@@ -17,7 +17,8 @@
 -   [monthNameFinder](#monthnamefinder)
 -   [numToNameFinder](#numtonamefinder)
 -   [getWeekForDate](#getweekfordate)
--   [getDateInFollowingWeek](#getdateinfollowingweek)
+-   [getNextWeek](#getnextweek)
+-   [getPrevWeek](#getprevweek)
 -   [getNWeeks](#getnweeks)
 -   [getNWeeksNested](#getnweeksnested)
 -   [weekDayNameFinder](#weekdaynamefinder)
@@ -211,7 +212,7 @@ Creates an array of dates that corresponds to a week range
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Day>** 
 
-## getDateInFollowingWeek
+## getNextWeek
 
 Returns the date one week later when given a date
 
@@ -219,6 +220,17 @@ Returns the date one week later when given a date
 
 -   `date` **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
 -   `daysInWeek` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?= 7** 
+
+Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
+
+## getPrevWeek
+
+Returns the date one week earlier when given a date
+
+**Parameters**
+
+-   `date`  
+-   `daysInWeek`  
 
 Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** 
 
