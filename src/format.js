@@ -1,9 +1,8 @@
 /**
  * @description Formats a date in International format
- *
  * @export
- * @param {any} date
- * @returns {string} A formatted date
+ * @param {Date} date A JS Date object.
+ * @returns {string} A formatted date.
  */
 export default function formatDate(date) {
   // TODO: Prettify

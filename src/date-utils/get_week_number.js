@@ -1,4 +1,7 @@
-module.exports = function getWeekNumber(date) {
+var parse = require('./parse.js');
+
+module.exports = function getWeekNumber(dirtyDate) {
+  var date = parse(dirtyDate);
   var instance;
 
   if (typeof date === 'string' && date.length) {

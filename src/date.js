@@ -3,8 +3,8 @@ import isDate from './date-utils/is_date';
 
 /**
  * @desc Given a valid date string, or Date object, returns a Date object.
- * @param {String | Date} date
- * @returns {Date}
+ * @param {string | Date} date A valid date or date string.
+ * @returns {Date} A JS Date object
  */
 export function getDate(date) {
     return isDate(date) ? date : parse(date);

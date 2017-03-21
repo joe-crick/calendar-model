@@ -28,7 +28,6 @@ test('Calendar Model: getMonthName', nest => {
 test('Calendar Model: Navigate Months', nest => {
   nest.test('Returns the next month in a twelve-month calendar', assert => {
     const nextMonth = getNextMonth(TEST_DATE);
-    assert.comment('next month: ' + nextMonth);
     assert.ok(nextMonth === 4, 'should be "April"');
     assert.end();
   });

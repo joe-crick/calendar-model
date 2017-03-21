@@ -13,11 +13,11 @@ import addDays from './date-utils/adjust_days';
  * _getEvents-: A function that returns a set of events when given a date object.
  * _formatDate_: A function that returns a valid formatted date. Defaults to date-fns format function, International date format.
  *
- * @param {String | Date} date
- * @param {Function} getEvents
- * @param {Function} formatDate
+ * @param {string | Date} date A valid date or date string.
+ * @param {Function} getEvents An event binding function. A default function is provided.
+ * @param {Function} formatDate A date formatting function. A default function is provided.
  * @param {Function} toISOString
- * @returns {{date: Date, formattedDate: string, isoDate: *, weekDayNumber: number, dayOfMonth: number, events}}
+ * @returns {{date: Date, formattedDate: string, isoDate: string, weekDayNumber: number, dayOfMonth: number, events}}
  */
 export default function getDay({date, getEvents=noOp, formatDate=format, toISOString=Date.prototype.toISOString}) {
     const _date = getDate(date);
