@@ -6,7 +6,8 @@
  */
 export default function formatDate(date) {
   // TODO: Prettify
-  const day = date.getDate() <= 9 ? `0${date.getDate()}` : date.getDate();
+  const _date = date.getDate();
+  const day = _date <= 9 ? `0${_date}` : _date;
   let month = date.getMonth() + 1;
   month = month <= 9 ? `0${month}` : month;
   return `${day}/${month}/${date.getFullYear()}`;
