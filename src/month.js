@@ -24,7 +24,6 @@ export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS
   return getNWeeks({startDate: startOfMonth(startDate), getEvents, formatDate, numOfWeeks: weeksInMonth});
 }
 
-
 /**
  * @description Returns a nested array of Days. Each set of days is grouped in a week-long array.
  *
@@ -37,16 +36,6 @@ export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS
  */
 export function getNestedMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
   return getNWeeksNested({startDate: startOfMonth(startDate), getEvents, formatDate, numOfWeeks: weeksInMonth});
-}
-
-
-/**
- * @description Returns a month name, when given a month number
- * @param {[*]} monthNames
- * @returns {getName} A function that matches a number to a Month name (e.g., 0 === January)
- */
-export function monthNameFinder(monthNames = MONTH_NAMES) {
-  return numberToNameFinder(monthNames);
 }
 
 /**
@@ -69,4 +58,13 @@ export function getPrevMonth(dirtyDate) {
   const date = parse(dirtyDate);
   const currentMonth = date.getMonth();
   return (currentMonth + 1) > 1 ? currentMonth : 12
+}
+
+/**
+ * @description Returns a month name, when given a month number
+ * @param {[*]} monthNames
+ * @returns {getName} A function that matches a number to a Month name (e.g., 0 === January)
+ */
+export function monthNameFinder(monthNames = MONTH_NAMES) {
+  return numberToNameFinder(monthNames);
 }
