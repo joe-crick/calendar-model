@@ -24,7 +24,7 @@ const WEEK_DAY_NAMES = {
  * number of days is 6.
  * @returns {Array.<Day>} An array of Days.
  */
-export function getWeekForDate({startDate, getEvents, formatDate, numOfDays = 6}) {
+export function getWeek({startDate, getEvents, formatDate, numOfDays = 6}) {
   return getNDays({startDate: startOfWeek(startDate), numOfDays, getEvents, formatDate});
 }
 
@@ -62,7 +62,7 @@ export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
     return [];
   }
 
-  const week = getWeekForDate({startDate, getEvents, formatDate});
+  const week = getWeek({startDate, getEvents, formatDate});
 
   return !numOfWeeks
     ? week
