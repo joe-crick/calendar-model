@@ -20,7 +20,7 @@ const WEEKS_IN_MONTH = 5;
  * @param {number} weeksInMonth
  * @returns {Array<Day>} A one-dimensional array of Days
  */
-export function getCalendarMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
+export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
   return getNWeeks({startDate: startOfMonth(startDate), getEvents, formatDate, numOfWeeks: weeksInMonth});
 }
 
