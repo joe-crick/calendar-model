@@ -29,26 +29,6 @@ export function getWeek({startDate, getEvents, formatDate, numOfDays = 6}) {
 }
 
 /**
- * @desc Returns the date one week later when given a date.
- * @param {String | Date} date A valid date or date string.
- * @param {number} daysInWeek Optional. Defaults to 7. Can be overridden.
- * @returns {Date} A date one week in the future from the date provided.
- */
-export function getNextWeek(date, daysInWeek = 7) {
-  return adjustDays(date, daysInWeek);
-}
-
-/**
- * @desc Returns the date one week earlier when given a date.
- * @param {String | Date} date A valid date or date string.
- * @param {number} daysInWeek The number of days in the week. Defaults to 7.
- * @returns {Date} A date one week in the past from the date provided.
- */
-export function getPrevWeek(date, daysInWeek = 7) {
-  return adjustDays(date, -daysInWeek);
-}
-
-/**
  * @desc Returns a set of _n_ weeks, when given a start seed.
  * @param {String | Date} startDate  A date in the week. This function will convert any
  * date passed into it to the beginning of the week.
@@ -88,6 +68,26 @@ export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) 
   }
 
   return weeks;
+}
+
+/**
+ * @desc Returns the date one week later when given a date.
+ * @param {String | Date} date A valid date or date string.
+ * @param {number} daysInWeek Optional. Defaults to 7. Can be overridden.
+ * @returns {Date} A date one week in the future from the date provided.
+ */
+export function getNextWeek(date, daysInWeek = 7) {
+  return adjustDays(date, daysInWeek);
+}
+
+/**
+ * @desc Returns the date one week earlier when given a date.
+ * @param {String | Date} date A valid date or date string.
+ * @param {number} daysInWeek The number of days in the week. Defaults to 7.
+ * @returns {Date} A date one week in the past from the date provided.
+ */
+export function getPrevWeek(date, daysInWeek = 7) {
+  return adjustDays(date, -daysInWeek);
 }
 
 /**
