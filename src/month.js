@@ -35,7 +35,7 @@ export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS
  * @param {number} weeksInMonth
  * @returns {Array} A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
  */
-export function getNestedCalendarMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
+export function getNestedMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
   return getNWeeksNested({startDate: startOfMonth(startDate), getEvents, formatDate, numOfWeeks: weeksInMonth});
 }
 

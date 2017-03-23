@@ -1,5 +1,5 @@
 import test from 'tape';
-import {getMonth, getNestedCalendarMonth, monthNameFinder, getNextMonth, getPrevMonth} from '../src/month';
+import {getMonth, getNestedMonth, monthNameFinder, getNextMonth, getPrevMonth} from '../src/month';
 
 const TEST_DATE = '03.01.2017';
 
@@ -10,7 +10,7 @@ test('Calendar Model: Month', nest => {
     assert.end();
   });
   nest.test('Given a month, returns a nested set of days corresponding to that calendar month', assert => {
-    const month = getNestedCalendarMonth({startDate: TEST_DATE});
+    const month = getNestedMonth({startDate: TEST_DATE});
     assert.ok(month.length === 5, 'should be 5 weeks');
     assert.end();
   });
