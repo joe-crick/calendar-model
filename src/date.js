@@ -6,6 +6,6 @@ import isDate from './date-utils/is_date';
  * @param {string | Date} date A valid date or date string.
  * @returns {Date} A JS Date object
  */
-export function getDate(date) {
+export function getJsDate(date) {
     return isDate(date) ? date : parse(date);
 }
