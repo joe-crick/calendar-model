@@ -43,7 +43,7 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
     /**
      * @return {number}
      */
-    get weekNumber() {
+    get weekOfYear() {
       return getWeekNumber(this.date);
     },
     /**

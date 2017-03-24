@@ -21,7 +21,7 @@ test('Calendar Model: Day', nest => {
   });
   nest.test('Returns a week number', assert => {
     const day = getDay({date: TEST_DAY});
-    assert.ok(day.weekNumber === 52, 'should be 52');
+    assert.ok(day.weekOfYear === 52, 'should be 52');
     assert.end();
   });
   nest.test('Returns a one-based month number', assert => {
