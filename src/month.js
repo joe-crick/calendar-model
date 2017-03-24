@@ -32,7 +32,7 @@ export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS
  * @param {Function} getEvents
  * @param {Function} formatDate
  * @param {number} weeksInMonth
- * @returns {Array} A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
+ * @returns {Array<Array<Day>>} A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
  */
 export function getNestedMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
   return getNWeeksNested({startDate: startOfMonth(startDate), getEvents, formatDate, numOfWeeks: weeksInMonth});
@@ -40,8 +40,8 @@ export function getNestedMonth({startDate, getEvents, formatDate, weeksInMonth =
 
 /**
  * @desc Returns the following month in a 12-month calendar
- * @return {number} A one-based number representing the next month (e.g., 1 === January)
  * @param {String | Date} dirtyDate A date string or JS Date object
+ * @return {number} A one-based number representing the next month (e.g., 1 === January)
  */
 export function getNextMonth(dirtyDate) {
   const date = parse(dirtyDate);
@@ -51,8 +51,8 @@ export function getNextMonth(dirtyDate) {
 
 /**
  * @desc Returns the previous month in a 12-month calendar
- * @return {number} A one-based number representing the next month (e.g., 1 === January)
  * @param {String | Date} dirtyDate  A date string or JS Date object
+ * @return {number} A one-based number representing the next month (e.g., 1 === January)
  */
 export function getPrevMonth(dirtyDate) {
   const date = parse(dirtyDate);
@@ -62,8 +62,8 @@ export function getPrevMonth(dirtyDate) {
 
 /**
  * @description Returns a month name, when given a month number (one-based)
- * @param {[*]} monthNames
- * @returns {getName} A function that matches a number to a Month name (e.g., 1 === January)
+ * @param {Object} monthNames
+ * @returns {Function} A function that matches a number to a Month name (e.g., 1 === January)
  */
 export function monthNameFinder(monthNames = MONTH_NAMES) {
   return numberToNameFinder(monthNames);

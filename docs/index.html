@@ -75,6 +75,16 @@
               
                 
                 <li><a
+                  href='#weeknumber'
+                  class="">
+                  weekNumber
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#month'
                   class="">
                   month
@@ -285,9 +295,9 @@
               
                 
                 <li><a
-                  href='#getnextweek'
+                  href='#getnextweekday'
                   class="">
-                  getNextWeek
+                  getNextWeekDay
                   
                 </a>
                 
@@ -295,9 +305,9 @@
               
                 
                 <li><a
-                  href='#getprevweek'
+                  href='#getprevweekday'
                   class="">
-                  getPrevWeek
+                  getPrevWeekDay
                   
                 </a>
                 
@@ -420,7 +430,7 @@ methods that provide ISO Date, and Week Day Number. Also contains a set of Event
 _formatDate</em>: A function that returns a valid formatted date. Defaults to date-fns format function, International date format.</p>
 
 
-  <div class='pre p1 fill-light mt0'>getDay(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, toISOString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): {date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>, formattedDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isoDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, weekDayNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, dayOfMonth: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, events}</div>
+  <div class='pre p1 fill-light mt0'>getDay(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, toISOString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): Day</div>
   
   
 
@@ -531,7 +541,7 @@ _formatDate</em>: A function that returns a valid formatted date. Defaults to da
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>{date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>, formattedDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isoDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, weekDayNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, dayOfMonth: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, events}</code>:
+      <code>Day</code>:
         
 
       
@@ -676,6 +686,59 @@ _formatDate</em>: A function that returns a valid formatted date. Defaults to da
 
 
   <div class='pre p1 fill-light mt0'>dayOfMonth</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='weeknumber'>
+      weekNumber
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>weekNumber</div>
   
   
 
@@ -1761,7 +1824,7 @@ to the format: MM/01/YYYY.
   <p>Returns a nested array of Days. Each set of days is grouped in a week-long array.</p>
 
 
-  <div class='pre p1 fill-light mt0'>getNestedMonth(startDate: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, weeksInMonth: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>getNestedMonth(startDate: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, weeksInMonth: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Day>></div>
   
   
 
@@ -1867,7 +1930,7 @@ to the format: MM/01/YYYY.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Day>></code>:
         A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
 
       
@@ -2040,7 +2103,7 @@ to the format: MM/01/YYYY.
   <p>Returns a month name, when given a month number (one-based)</p>
 
 
-  <div class='pre p1 fill-light mt0'>monthNameFinder(monthNames: [any]?= MONTH_NAMES): getName</div>
+  <div class='pre p1 fill-light mt0'>monthNameFinder(monthNames: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?= MONTH_NAMES): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
@@ -2056,7 +2119,7 @@ to the format: MM/01/YYYY.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>monthNames</span> <code class='quiet'>([any]?= MONTH_NAMES)</code>
+            <span class='code bold'>monthNames</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?= MONTH_NAMES)</code>
 	    
           </div>
           
@@ -2070,7 +2133,7 @@ to the format: MM/01/YYYY.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>getName</code>:
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
         A function that matches a number to a Month name (e.g., 1 === January)
 
       
@@ -2398,7 +2461,7 @@ date passed into it to the beginning of the week.
   <p>Returns a nested array of Days. Each set of days is grouped in a week-long array.</p>
 
 
-  <div class='pre p1 fill-light mt0'>getNWeeksNested(startDate: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, numOfWeeks: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>getNWeeksNested(startDate: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, numOfWeeks: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Day>></div>
   
   
 
@@ -2505,7 +2568,7 @@ date passed into it to the beginning of the week.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Day>></code>:
         A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
 
       
@@ -2531,18 +2594,18 @@ date passed into it to the beginning of the week.
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='getnextweek'>
-      getNextWeek
+    <h3 class='fl m0' id='getnextweekday'>
+      getNextWeekDay
     </h3>
     
     
   </div>
   
 
-  <p>Returns the date one week later when given a date.</p>
+  <p>Returns the corresponding day in the next week</p>
 
 
-  <div class='pre p1 fill-light mt0'>getNextWeek(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), daysInWeek: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?= 7): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
+  <div class='pre p1 fill-light mt0'>getNextWeekDay(date: any, daysInWeek: any): Day</div>
   
   
 
@@ -2558,18 +2621,16 @@ date passed into it to the beginning of the week.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>date</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
-	    A valid date or date string.
-
+            <span class='code bold'>date</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>daysInWeek</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?= 7)</code>
-	    Optional. Defaults to 7. Can be overridden.
-
+            <span class='code bold'>daysInWeek</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
@@ -2582,8 +2643,8 @@ date passed into it to the beginning of the week.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
-        A date one week in the future from the date provided.
+      <code>Day</code>:
+        
 
       
     
@@ -2608,18 +2669,18 @@ date passed into it to the beginning of the week.
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='getprevweek'>
-      getPrevWeek
+    <h3 class='fl m0' id='getprevweekday'>
+      getPrevWeekDay
     </h3>
     
     
   </div>
   
 
-  <p>Returns the date one week earlier when given a date.</p>
+  <p>Returns the corresponding day in the previous week</p>
 
 
-  <div class='pre p1 fill-light mt0'>getPrevWeek(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), daysInWeek: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?= 7): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
+  <div class='pre p1 fill-light mt0'>getPrevWeekDay(date: any, daysInWeek: any): Day</div>
   
   
 
@@ -2635,18 +2696,16 @@ date passed into it to the beginning of the week.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>date</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
-	    A valid date or date string.
-
+            <span class='code bold'>date</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>daysInWeek</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?= 7)</code>
-	    The number of days in the week. Defaults to 7.
-
+            <span class='code bold'>daysInWeek</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
@@ -2659,8 +2718,8 @@ date passed into it to the beginning of the week.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
-        A date one week in the past from the date provided.
+      <code>Day</code>:
+        
 
       
     
@@ -2696,7 +2755,7 @@ date passed into it to the beginning of the week.
   <p>CONSTRUCTOR: Creates a function that returns week day names.</p>
 
 
-  <div class='pre p1 fill-light mt0'>weekDayNameFinder(weekDayNames: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?= WEEK_DAY_NAMES): getName</div>
+  <div class='pre p1 fill-light mt0'>weekDayNameFinder(weekDayNames: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?= WEEK_DAY_NAMES): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
@@ -2737,7 +2796,7 @@ corresponding to the weeks of the month. For example, the default value is:
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>getName</code>:
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
         A function that will find a week day name when given a number.
 
       

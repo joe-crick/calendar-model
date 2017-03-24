@@ -15,9 +15,9 @@ import getWeekNumber from './date-utils/get_week_number';
  * @param {Function} getEvents An event binding function. A default function is provided.
  * @param {Function} formatDate A date formatting function. A default function is provided.
  * @param {Function} toISOString
- * @returns {{date: Date, formattedDate: string, isoDate: string, weekDayNumber: number, dayOfMonth: number, events}}
+ * @returns {Day}
  */
-export default function getDay({date, getEvents = noOp, formatDate = format, toISOString = Date.prototype.toISOString}) {
+export function getDay({date, getEvents = noOp, formatDate = format, toISOString = Date.prototype.toISOString}) {
   return {
     date: getJsDate(date),
     /**

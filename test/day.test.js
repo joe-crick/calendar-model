@@ -1,6 +1,5 @@
 import test from 'tape';
-import getDay from '../src/day';
-import {getNDays} from '../src/day';
+import {getDay, getNDays} from '../src/day';
 
 const TEST_DAY = '12.28.2016';
 

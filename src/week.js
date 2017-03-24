@@ -1,5 +1,5 @@
 import startOfWeek from './date-utils/start_of_week';
-import {getNDays} from './day';
+import {getDay, getNDays} from './day';
 import adjustDays from './date-utils/adjust_days';
 import _getWeekNumber from './date-utils/get_week_number';
 import numberToNameFinder from './name.finder';
@@ -22,7 +22,7 @@ const WEEK_DAY_NAMES = {
  * @param {Function} formatDate A date formatting function. A default function is provided.
  * @param {number} numOfDays The number of days in a week. Zero-based, i.e., the default
  * number of days is 6.
- * @returns {Array.<Day>} An array of Days.
+ * @returns {Array<Day>} An array of Days.
  */
 export function getWeek({startDate, getEvents, formatDate, numOfDays = 6}) {
   return getNDays({startDate: startOfWeek(startDate), numOfDays, getEvents, formatDate});
@@ -56,7 +56,7 @@ export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks}) {
  * @param {Function} getEvents An event binding function. A default function is provided.
  * @param {Function} formatDate A date formatting function. A default function is provided.
  * @param {number} numOfWeeks The number of weeks to return.
- * @returns {Array} A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
+ * @returns {Array<Array<Day>>} A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
  */
 export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) {
   const weeks = [];
@@ -70,24 +70,32 @@ export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) 
   return weeks;
 }
 
-/**
- * @desc Returns the date one week later when given a date.
- * @param {String | Date} date A valid date or date string.
- * @param {number} daysInWeek Optional. Defaults to 7. Can be overridden.
- * @returns {Date} A date one week in the future from the date provided.
- */
-export function getNextWeek(date, daysInWeek = 7) {
+function getNextWeek(date, daysInWeek = 7) {
   return adjustDays(date, daysInWeek);
 }
 
 /**
- * @desc Returns the date one week earlier when given a date.
- * @param {String | Date} date A valid date or date string.
- * @param {number} daysInWeek The number of days in the week. Defaults to 7.
- * @returns {Date} A date one week in the past from the date provided.
+ * @desc Returns the corresponding day in the next week
+ * @param date
+ * @param daysInWeek
+ * @return {Day}
  */
-export function getPrevWeek(date, daysInWeek = 7) {
+export function getNextWeekDay(date, daysInWeek = 7) {
+  return getDay({date: getNextWeek(date, daysInWeek)});
+}
+
+function getPrevWeek(date, daysInWeek = 7) {
   return adjustDays(date, -daysInWeek);
+}
+
+/**
+ * @desc Returns the corresponding day in the previous week
+ * @param date
+ * @param daysInWeek
+ * @return {Day}
+ */
+export function getPrevWeekDay(date, daysInWeek = 7) {
+  return getDay({date: getPrevWeek(date, daysInWeek)});
 }
 
 /**
@@ -103,7 +111,7 @@ export function getPrevWeek(date, daysInWeek = 7) {
     5: 'Friday',
     6: 'Saturday'
 };
- * @returns {getName} A function that will find a week day name when given a number.
+ * @returns {Function} A function that will find a week day name when given a number.
  */
 export function weekDayNameFinder(weekDayNames = WEEK_DAY_NAMES) {
   return numberToNameFinder(weekDayNames);
