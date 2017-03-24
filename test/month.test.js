@@ -19,7 +19,7 @@ test('Calendar Model: Month', nest => {
 test('Calendar Model: getMonthName', nest => {
   nest.test('Returns a name for a month, when given a valid number', assert => {
     const monthFinder = monthNameFinder();
-    const monthName = monthFinder(0);
+    const monthName = monthFinder(1);
     assert.ok(monthName === 'January', 'should be "January"');
     assert.end();
   });

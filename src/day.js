@@ -4,9 +4,6 @@ import noOp from './no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
 import addDays from './date-utils/adjust_days';
 
-// TODO: Do we provide a way to get time slots for a given day? If so, we should only provide it
-// for single week and day views.
-
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
  * methods that provide ISO Date, and Week Day Number. Also contains a set of Events for that day.
@@ -19,16 +16,59 @@ import addDays from './date-utils/adjust_days';
  * @param {Function} toISOString
  * @returns {{date: Date, formattedDate: string, isoDate: string, weekDayNumber: number, dayOfMonth: number, events}}
  */
-export default function getDay({date, getEvents=noOp, formatDate=format, toISOString=Date.prototype.toISOString}) {
-    const _date = getJsDate(date);
-    return {
-        date: _date,
-        formattedDate: formatDate(_date),
-        isoDate: toISOString.call(_date, _date),
-        weekDayNumber: _date.getDay(),
-        dayOfMonth: _date.getDate(),
-        events: getEvents(_date)
-    };
+export default function getDay({date, getEvents = noOp, formatDate = format, toISOString = Date.prototype.toISOString}) {
+  return {
+    date: getJsDate(date),
+    /**
+     * @return {string}
+     */
+    get formattedDate() {
+      return formatDate(this.date);
+    },
+    /**
+     * @desc Convenience method
+     * @return {number}
+     */
+    get weekDayNumber() {
+      return this.date.getDay();
+    },
+    /**
+     * @desc Convenience method
+     * @return {number}
+     */
+    get dayOfMonth() {
+      return this.date.getDate();
+    },
+    /**
+     * @desc JS' Date object takes a 1-based scheme for date creation, but returns a 0-based scheme
+     * on month queries. This interface adds a bit of sanity, so that we're only ever dealing with
+     * one-based month schemes.
+     * @return {number}
+     */
+    get month() {
+      return this.date.getMonth() + 1;
+    },
+    /**
+     * @desc Convenience method
+     * @return {number}
+     */
+    get year() {
+      return this.date.getFullYear();
+    },
+    /**
+     * @return {string}
+     */
+    get isoDate() {
+      return toISOString.call(this.date, this.date);
+    },
+    /**
+     * @return {Array}
+     */
+    get events() {
+      return getEvents(this.date);
+    },
+    isCalendarModelDay: true
+  };
 }
 
 /**
@@ -40,6 +80,6 @@ export default function getDay({date, getEvents=noOp, formatDate=format, toISOSt
  * @returns {Array<Day>}
  */
 export function getNDays({startDate, numOfDays, getEvents, formatDate}) {
-    const endDate = addDays(startDate, numOfDays);
-    return getRangeOfDates(startDate, endDate).map(date => getDay({date, getEvents, formatDate}));
+  const endDate = addDays(startDate, numOfDays);
+  return getRangeOfDates(startDate, endDate).map(date => getDay({date, getEvents, formatDate}));
 }

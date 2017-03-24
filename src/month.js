@@ -3,7 +3,7 @@ import numberToNameFinder from './name.finder';
 import parse from './date-utils/parse';
 import startOfMonth from './date-utils/start_of_month';
 
-const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
+const MONTH_NAMES = [undefined,'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
@@ -40,7 +40,7 @@ export function getNestedMonth({startDate, getEvents, formatDate, weeksInMonth =
 
 /**
  * @desc Returns the following month in a 12-month calendar
- * @return {number} A zero-based number representing the next month (e.g., 0 === January)
+ * @return {number} A one-based number representing the next month (e.g., 1 === January)
  * @param {String | Date} dirtyDate A date string or JS Date object
  */
 export function getNextMonth(dirtyDate) {
@@ -51,7 +51,7 @@ export function getNextMonth(dirtyDate) {
 
 /**
  * @desc Returns the previous month in a 12-month calendar
- * @return {number} A zero-based number representing the next month (e.g., 0 === January)
+ * @return {number} A one-based number representing the next month (e.g., 1 === January)
  * @param {String | Date} dirtyDate  A date string or JS Date object
  */
 export function getPrevMonth(dirtyDate) {
@@ -61,9 +61,9 @@ export function getPrevMonth(dirtyDate) {
 }
 
 /**
- * @description Returns a month name, when given a month number
+ * @description Returns a month name, when given a month number (one-based)
  * @param {[*]} monthNames
- * @returns {getName} A function that matches a number to a Month name (e.g., 0 === January)
+ * @returns {getName} A function that matches a number to a Month name (e.g., 1 === January)
  */
 export function monthNameFinder(monthNames = MONTH_NAMES) {
   return numberToNameFinder(monthNames);
