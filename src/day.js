@@ -3,6 +3,7 @@ import {getJsDate} from './date';
 import noOp from './no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
 import addDays from './date-utils/adjust_days';
+import getWeekNumber from './date-utils/get_week_number';
 
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
@@ -38,6 +39,12 @@ export default function getDay({date, getEvents = noOp, formatDate = format, toI
      */
     get dayOfMonth() {
       return this.date.getDate();
+    },
+    /**
+     * @return {number}
+     */
+    get weekNumber() {
+      return getWeekNumber(this.date);
     },
     /**
      * @desc JS' Date object takes a 1-based scheme for date creation, but returns a 0-based scheme

@@ -20,9 +20,13 @@ test('Calendar Model: Day', nest => {
     assert.ok(day.year === 2016, 'should be 2016');
     assert.end();
   });
+  nest.test('Returns a week number', assert => {
+    const day = getDay({date: TEST_DAY});
+    assert.ok(day.weekNumber === 52, 'should be 52');
+    assert.end();
+  });
   nest.test('Returns a one-based month number', assert => {
     const day = getDay({date: TEST_DAY});
-    assert.comment('month: ' + day.month);
     assert.ok(day.month === 12, 'should be 12');
     assert.end();
   });
