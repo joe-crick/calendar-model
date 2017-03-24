@@ -19,7 +19,7 @@ test('Calendar Model: getWeek', nest => {
   });
   nest.test('First day of week: Returns the correct day of the week', assert => {
     const week = getWeek({startDate: TEST_DATE});
-    assert.ok(week[0].weekDayNumber === 0, 'First day of the week, should be Sunday');
+    assert.ok(week[0].dayOfWeek === 0, 'First day of the week, should be Sunday');
     assert.end();
   });
   nest.test('First day of week: Returns the correct calendar day of the month', assert => {

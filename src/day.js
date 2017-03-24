@@ -30,7 +30,7 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
      * @desc Convenience method
      * @return {number}
      */
-    get weekDayNumber() {
+    get dayOfWeek() {
       return this.date.getDay();
     },
     /**

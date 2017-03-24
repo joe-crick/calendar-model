@@ -32,6 +32,11 @@ Calendar Model is implemented as a set of functions. These functions can be quer
 >
 > An `event` is an arbitrary set of data \(Array\) associated with a `Day`.
 
+Calendar Model conforms to the following pattern:
+
+--> Input: Date
+--> Output: Day
+
 Calendar Model exposes functions that return the following categories of result sets:
 
 * Month \(by default 5 weeks\)
@@ -171,8 +176,9 @@ The above code is, in fact, Calendar Model's default Event Binder, which can be 
 
 ####  5.3. <a name='DefinetheDatasPresentation'></a>Define the Data's Presentation
 
-You can present the calendar data in whatever format you like. Below is an example of rendering a month-based
-calendar using JSX (when presenting tabular data for multiple weeks, use a nested result set)::
+You can present the calendar data in whatever format you like. Below is an example of rendering a
+ month-based calendar using JSX (when presenting tabular data for multiple weeks, use a nested
+ result set)::
 
 ```jsx
 <table className="calendar-example">
@@ -206,9 +212,10 @@ calendar using JSX (when presenting tabular data for multiple weeks, use a neste
 
 ###  6. <a name='HelperMethods'></a>Helper Methods
 
-Calendar Model exposes several helper methods, which it also uses internally:
+Calendar Model exposes several helper methods:
 
 * `formatDate`: Formats a date in International format \(DD/MM/YYYY\).
 * `monthNameFinder`: Returns the text name for a given month.
 * `weekDayNameFinder`: Returns the text name for a given week.
-* `getNextWeek`: Given a seed date, returns a date 7 days in the future.
+* `getNextWeekDay`: Given a seed date, returns a Day 7 days in the future.
+* `getPrevWeekDay`: Given a seed date, returns a Day 7 days in the past.

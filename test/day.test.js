@@ -11,7 +11,7 @@ test('Calendar Model: Day', nest => {
   });
   nest.test('The day object contains its week day number', assert => {
     const day = getDay({date: TEST_DAY});
-    assert.ok(day.weekDayNumber === 3, 'should be 3');
+    assert.ok(day.dayOfWeek === 3, 'should be 3');
     assert.end();
   });
   nest.test('The day object contains its year', assert => {
