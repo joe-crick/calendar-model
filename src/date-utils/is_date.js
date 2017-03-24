@@ -14,8 +14,6 @@
  * var result = isDate('mayonnaise')
  * //=> false
  */
-function isDate(argument) {
+export default function isDate(argument) {
     return argument instanceof Date;
 }
-
-module.exports = isDate;

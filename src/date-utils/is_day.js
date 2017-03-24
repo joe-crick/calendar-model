@@ -14,8 +14,6 @@
  * var result = isDate('mayonnaise')
  * //=> false
  */
-function isDay(argument) {
+export default function isDay(argument) {
   return argument.isCalendarModelDay;
 }
-
-module.exports = isDate;

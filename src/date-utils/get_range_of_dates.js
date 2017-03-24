@@ -1,4 +1,4 @@
-var parse = require('./parse.js');
+import parse from './parse.js';
 
 /**
  * @private
@@ -15,7 +15,7 @@ var parse = require('./parse.js');
  *
  * @example
  * // Each day between 6 October 2014 and 10 October 2014:
- * var result = eachDay(
+ * const result = eachDay(
  *   new Date(2014, 9, 6),
  *   new Date(2014, 9, 10)
  * )
@@ -27,19 +27,19 @@ var parse = require('./parse.js');
  * //   Fri Oct 10 2014 00:00:00
  * // ]
  */
-function getRangeOfDates(dirtyStartDate, dirtyEndDate) {
-    var startDate = parse(dirtyStartDate);
-    var endDate = parse(dirtyEndDate);
+export default function getRangeOfDates(dirtyStartDate, dirtyEndDate) {
+    const startDate = parse(dirtyStartDate);
+    const endDate = parse(dirtyEndDate);
 
-    var endTime = endDate.getTime();
+    const endTime = endDate.getTime();
 
     if (startDate.getTime() > endTime) {
         throw new Error('The first date cannot be after the second date');
     }
 
-    var dates = [];
+    const dates = [];
 
-    var currentDate = startDate;
+    const currentDate = startDate;
     currentDate.setHours(0, 0, 0, 0);
 
     while (currentDate.getTime() <= endTime) {
@@ -49,5 +49,3 @@ function getRangeOfDates(dirtyStartDate, dirtyEndDate) {
 
     return dates;
 }
-
-module.exports = getRangeOfDates;
