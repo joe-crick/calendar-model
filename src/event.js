@@ -1,4 +1,4 @@
-import format from './format';
+import {formatDate} from './format';
 
 /**
  * @description Given a data set where events can be obtained as date properties off an object, return the set of events
@@ -13,6 +13,6 @@ import format from './format';
  */
 export default function makeEventFinder(data) {
   return function getEvents(date) {
-    return data[format(date)] || [];
+    return data[formatDate(date)] || [];
   };
 }

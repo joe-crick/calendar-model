@@ -1,9 +1,10 @@
-import format from './format';
+import {addLeadingZeroIfLessThanTen, formatDate as format} from './format';
 import {getJsDate} from './date';
 import noOp from './no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
 import addDays from './date-utils/adjust_days';
 import getWeekNumber from './date-utils/get_week_number';
+import {getTwelveHourTime} from './hours';
 
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience
@@ -25,6 +26,22 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
      */
     get formattedDate() {
       return formatDate(this.date);
+    },
+    /**
+     * @return {string}
+     */
+    get twentyFourHourTime() {
+      return this.date.toTimeString().split(' ')[0];
+    },
+    /**
+     * @return {string}
+     */
+    get twelveHourTime() {
+      const date = this.date;
+      const hours = addLeadingZeroIfLessThanTen(getTwelveHourTime(date.getHours()));
+      const minutes = addLeadingZeroIfLessThanTen(date.getMinutes() );
+      const seconds = addLeadingZeroIfLessThanTen(date.getSeconds());
+      return `${hours}:${minutes}:${seconds}`;
     },
     /**
      * @desc Convenience method

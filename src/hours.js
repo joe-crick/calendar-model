@@ -1,3 +1,5 @@
+import {addLeadingZeroIfLessThanTen} from './format';
+
 /**
  * @desc Returns 24 time slots, from 12:00 AM - 12:00 PM
  * @returns {[string]} An array of time slots corresponding to 12-hour time.
@@ -5,7 +7,7 @@
 export function getTwelveHourTimeSlots() {
   const timeSlots = ['12:00 AM'];
   for(let slot = 1; slot < 24; slot++) {
-    timeSlots.push(`${formatTimeSlot(getTwelveHourTime(slot))}:00 ${getTimePeriod(slot)}`);
+    timeSlots.push(`${addLeadingZeroIfLessThanTen(getTwelveHourTime(slot))}:00 ${getTimePeriod(slot)}`);
   }
   return timeSlots;
 }
@@ -17,7 +19,7 @@ export function getTwelveHourTimeSlots() {
 export function getTwentyFourHourTimeSlots() {
   const timeSlots = [];
   for(let slot=0; slot < 24; slot++) {
-    timeSlots.push(`${formatTimeSlot(slot)}:00`);
+    timeSlots.push(`${addLeadingZeroIfLessThanTen(slot)}:00`);
   }
   return timeSlots;
 }
@@ -42,15 +44,6 @@ export function getTimePeriod(slot) {
 }
 
 /**
- * @desc Formats a number with a leading zero, if it is below 10
- * @param {number} slot A number
- * @returns {string} If the number is below 10, it will be padded with a leading 0.
- */
-export function formatTimeSlot(slot) {
-  return slot < 10 ? `0${slot}` : slot;
-}
-
-/**
  * @desc Converts 24 hour time to 12 hour time.
  * @param {string} time A valid 24-hour time value 'hh:mm'.
  * @return {string} The corresponding value in 12-hour time, with the appropriate time
@@ -59,5 +52,5 @@ export function formatTimeSlot(slot) {
 export function twentyFourToTwelveHourTime(time) {
   const slot = time.substring(0,2) >> 0;
   const timePeriod = getTimePeriod(slot);
-  return `${formatTimeSlot(getTwelveHourTime(slot))}:00 ${timePeriod}`;
+  return `${addLeadingZeroIfLessThanTen(getTwelveHourTime(slot))}:00 ${timePeriod}`;
 }

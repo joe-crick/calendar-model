@@ -1,14 +1,20 @@
 /**
+ * @desc Formats a number with a leading zero if it is below 10
+ * @param number
+ * @return {string}
+ */
+export function addLeadingZeroIfLessThanTen (number) {
+  return number < 10 ? `0${number}` : number;
+}
+
+/**
  * @description Formats a date in International format
  * @export
  * @param {Date} date A JS Date object.
  * @returns {string} A formatted date.
  */
-export default function formatDate(date) {
-  // TODO: Prettify
-  const _date = date.getDate();
-  const day = _date <= 9 ? `0${_date}` : _date;
-  let month = date.getMonth() + 1;
-  month = month <= 9 ? `0${month}` : month;
+export function formatDate(date) {
+  const day = addLeadingZeroIfLessThanTen(date.getDate());
+  const month = addLeadingZeroIfLessThanTen(date.getMonth() + 1);
   return `${day}/${month}/${date.getFullYear()}`;
 }

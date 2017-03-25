@@ -55,6 +55,26 @@
               
                 
                 <li><a
+                  href='#twentyfourhourtime'
+                  class="">
+                  twentyFourHourTime
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#twelvehourtime'
+                  class="">
+                  twelveHourTime
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#dayofweek'
                   class="">
                   dayOfWeek
@@ -145,6 +165,16 @@
               
                 
                 <li><a
+                  href='#addleadingzeroiflessthanten'
+                  class="">
+                  addLeadingZeroIfLessThanTen
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#formatdate'
                   class="">
                   formatDate
@@ -188,16 +218,6 @@
                   href='#gettimeperiod'
                   class="">
                   getTimePeriod
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#formattimeslot'
-                  class="">
-                  formatTimeSlot
                   
                 </a>
                 
@@ -578,6 +598,112 @@ _formatDate</em>: A function that returns a valid formatted date. Defaults to da
   
 
   <div class='pre p1 fill-light mt0'>formattedDate</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='twentyfourhourtime'>
+      twentyFourHourTime
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>twentyFourHourTime</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='twelvehourtime'>
+      twelveHourTime
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>twelveHourTime</div>
   
   
 
@@ -1218,6 +1344,73 @@ For example:
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='addleadingzeroiflessthanten'>
+      addLeadingZeroIfLessThanTen
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Formats a number with a leading zero if it is below 10</p>
+
+
+  <div class='pre p1 fill-light mt0'>addLeadingZeroIfLessThanTen(number: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>number</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='formatdate'>
       formatDate
     </h3>
@@ -1507,74 +1700,6 @@ For example:
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         If the number is below 12 (but greater than 0),
 will return 'AM', otherwise returns 'PM'.
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='formattimeslot'>
-      formatTimeSlot
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Formats a number with a leading zero, if it is below 10</p>
-
-
-  <div class='pre p1 fill-light mt0'>formatTimeSlot(slot: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>slot</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    A number
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
-        If the number is below 10, it will be padded with a leading 0.
 
       
     

@@ -2,10 +2,6 @@ import test from 'tape';
 import * as hours from '../src/hours';
 
 test('Calendar Model: Hours', nest => {
-  nest.test('Should format a time value under 10 with a leading zero', assert => {
-    assert.ok(hours.formatTimeSlot(9) === '09', 'should have a leading zero');
-    assert.end();
-  });
   nest.test('Should return the correct value for a twelve hour clock', assert => {
     assert.ok(hours.getTwelveHourTime(14) === 2, 'should be 2');
     assert.end();
