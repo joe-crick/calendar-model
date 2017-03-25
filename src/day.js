@@ -34,6 +34,7 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
       return this.date.toTimeString().split(' ')[0];
     },
     /**
+     * @note Choosing to implement a more lengthy algorithm to support older browsers
      * @return {string}
      */
     get twelveHourTime() {

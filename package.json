@@ -12,7 +12,7 @@
     "build:js": "babel src -s --out-dir lib",
     "build:dev": "webpack",
     "build:docs": "documentation build ./src/*.js --a undefined -f html -o docs",
-    "build": "npm-run-all build:js build:docs"
+    "build": "npm-run-all test build:js build:docs"
   },
   "devDependencies": {
     "babel": "^6.23.0",

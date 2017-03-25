@@ -3,6 +3,8 @@ import numberToNameFinder from './name.finder';
 import parse from './date-utils/parse';
 import startOfMonth from './date-utils/start_of_month';
 
+// TODO: Split out helper methods into a separate lib?
+
 const MONTH_NAMES = [undefined,'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
