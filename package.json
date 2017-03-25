@@ -10,7 +10,6 @@
     "tape-tests": "babel-tape-runner test.js | faucet",
     "test": "npm-run-all tape-tests",
     "build:js": "babel src -s --out-dir lib",
-    "build:dev": "webpack",
     "build:docs": "documentation build ./src/*.js --a undefined -f html -o docs",
     "build": "npm-run-all test build:js build:docs"
   },
