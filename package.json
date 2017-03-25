@@ -1,6 +1,6 @@
 {
   "name": "calendar-model",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A model that represents calendar and event data",
   "main": "index.js",
   "repository": "https://github.com/joe-crick/calendar-model.git",

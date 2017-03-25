@@ -50,6 +50,8 @@ Month and Week expose functions that can create two types of `sets`:
 
 Day queries only return Flat sets.
 
+Calendar Model is really small. It also has no external dependencies.
+
 
 ###  1. <a name='InstallfromNPM'></a>Install from NPM
 
