@@ -103,7 +103,10 @@ Consult the [sample application](https://github.com/joe-crick/calendar-model-exa
 
 ####  5.1. <a name='DefinetheModel'></a>Define the Model
 
-Because Calendar Model is a collection of functions, there are a number of ways you can define a given implementation of Calendar Model. You only need to include those functions you will be using in your application. You can use them as stand-alone functions, or add them as methods to an object. Below are a few examples:
+Because Calendar Model is a collection of functions, there are a number of ways you can define a
+given implementation of Calendar Model. You only need to include those functions you will be
+using in your application. You can use them as stand-alone functions, or add them as methods
+to an object. Below are a few examples:
 
 ##### Create a Week-based Calendar, without Events
 
@@ -149,12 +152,15 @@ export default function getMonth({date});
 
 ####  5.2. <a name='DefineanEventBinder'></a>Define an Event Binder
 
-Each `Day` in a result set returned by Calendar Model contains an `events` property. The `events` property can store
-an arbitrary set \(Array\) of data. Event data lives outside of the Calendar Model, and is one-way, one-time bound to
-`Day`s.
+Each `Day` in a result set returned by Calendar Model contains an `events` property. The
+`events` property can store an arbitrary set \(Array\) of data. Event data lives outside of
+the Calendar Model, and is one-way, one-time bound to `Day`s.
 
-Event binding occurs when a `Day` is created. The constructor calls the `getEvents` function to populate the contents
-of the event. The `Day`s inner `Date` instance is passed as an argument to the `getEvents` function.
+Event binding occurs when a `Day` is created. The constructor calls the `getEvents` function to
+populate the contents of the event. The output of the `getEvents` function is assigned to the
+events property of the `Day`. In Calendar Model's default `getEvents` implementation, the `Day`s
+`Date` instance is passed as an argument to the `getEvents` function, which returns an array of
+events for that day.
 
 For example, given the following event data format:
 
