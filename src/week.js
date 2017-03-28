@@ -70,6 +70,12 @@ export function getNWeeksNested({startDate, getEvents, formatDate, numOfWeeks}) 
   return weeks;
 }
 
+/**
+ * @desc Returns a Date set to the corresponding day in the next week
+ * @param date
+ * @param daysInWeek
+ * @return {Date}
+ */
 function getNextWeek(date, daysInWeek = 7) {
   return adjustDays(date, daysInWeek);
 }
@@ -84,6 +90,12 @@ export function getNextWeekDay(date, daysInWeek = 7) {
   return getDay({date: getNextWeek(date, daysInWeek)});
 }
 
+/**
+ * @desc Returns a Date set to the corresponding day in the previous week
+ * @param date
+ * @param daysInWeek
+ * @return {Date}
+ */
 function getPrevWeek(date, daysInWeek = 7) {
   return adjustDays(date, -daysInWeek);
 }
@@ -118,7 +130,7 @@ export function weekDayNameFinder(weekDayNames = WEEK_DAY_NAMES) {
 }
 
 /**
- * @desc Proxy for getWeekNumber
+ * @desc Getter for getWeekNumber
  * @param {string | Date} date A valid date or date string.
  * @returns {number} The week number in the year.
  */
