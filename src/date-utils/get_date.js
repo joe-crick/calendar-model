@@ -1,5 +1,5 @@
-import parse from './date-utils/parse';
-import isDate from './date-utils/is_date';
+import parse from './parse';
+import isDate from './is_date';
 
 /**
  * @desc Given a valid date string, or Date object, returns a Date object.

@@ -1,5 +1,5 @@
 import test from 'tape';
-import { getJsDate } from '../src/date';
+import { getJsDate } from '../src/date-utils/get_date';
 import isDate from 'date-fns/is_date';
 
 const TEST_DATE = '03.01.2017';
