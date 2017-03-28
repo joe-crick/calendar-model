@@ -1,4 +1,4 @@
-import {formatDate} from './format';
+import {formatDate} from './utils/format';
 
 /**
  * @description Given a data set where events can be obtained as date properties off an object, return the set of events

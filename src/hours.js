@@ -1,4 +1,4 @@
-import {addLeadingZeroIfLessThanTen} from './format';
+import {addLeadingZeroIfLessThanTen} from './utils/format';
 
 /**
  * @desc Returns 24 time slots, from 12:00 AM - 12:00 PM

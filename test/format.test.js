@@ -1,5 +1,5 @@
 import test from 'tape';
-import {addLeadingZeroIfLessThanTen} from '../src/format';
+import {addLeadingZeroIfLessThanTen} from '../src/utils/format';
 
 test('Calendar Model: Format', nest => {
   nest.test('Should format a time value under 10 with a leading zero', assert => {

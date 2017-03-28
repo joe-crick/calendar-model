@@ -1,4 +1,4 @@
-import {addLeadingZeroIfLessThanTen, formatDate as format} from './format';
+import {addLeadingZeroIfLessThanTen, formatDate as format} from './utils/format';
 import {getJsDate} from './date-utils/get_date';
 import noOp from './utils/no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
