@@ -25,16 +25,6 @@
               
                 
                 <li><a
-                  href='#getjsdate'
-                  class="">
-                  getJsDate
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#getday'
                   class="">
                   getDay
@@ -155,16 +145,6 @@
               
                 
                 <li><a
-                  href='#makeeventfinder'
-                  class="">
-                  makeEventFinder
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#addleadingzeroiflessthanten'
                   class="">
                   addLeadingZeroIfLessThanTen
@@ -185,19 +165,9 @@
               
                 
                 <li><a
-                  href='#gettwelvehourtimeslots'
+                  href='#getjsdate'
                   class="">
-                  getTwelveHourTimeSlots
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#gettwentyfourhourtimeslots'
-                  class="">
-                  getTwentyFourHourTimeSlots
+                  getJsDate
                   
                 </a>
                 
@@ -228,6 +198,36 @@
                   href='#twentyfourtotwelvehourtime'
                   class="">
                   twentyFourToTwelveHourTime
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#makeeventfinder'
+                  class="">
+                  makeEventFinder
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#gettwelvehourtimeslots'
+                  class="">
+                  getTwelveHourTimeSlots
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#gettwentyfourhourtimeslots'
+                  class="">
+                  getTwentyFourHourTimeSlots
                   
                 </a>
                 
@@ -315,9 +315,29 @@
               
                 
                 <li><a
+                  href='#getnextweek'
+                  class="">
+                  getNextWeek
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#getnextweekday'
                   class="">
                   getNextWeekDay
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getprevweek'
+                  class="">
+                  getPrevWeek
                   
                 </a>
                 
@@ -361,74 +381,6 @@
         </div>
       </div>
       <div class='fix-margin-3'>
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='getjsdate'>
-      getJsDate
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Given a valid date string, or Date object, returns a Date object.</p>
-
-
-  <div class='pre p1 fill-light mt0'>getJsDate(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>date</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
-	    A valid date or date string.
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
-        A JS Date object
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
             <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -1262,88 +1214,6 @@ one-based month schemes.</p>
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='makeeventfinder'>
-      makeEventFinder
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Given a data set where events can be obtained as date properties off an object, return the set of events
-for a given date.</p>
-
-
-  <div class='pre p1 fill-light mt0'>makeEventFinder(data: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>></div>
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    An object that whose keys are string dates that map dates to sets of events.
-For example:
-{
-'02/12/2017': 
-[
-{time: '09:00', event: 'Purchase a parrot'}
-]
-,
-'09/21/2017': 
-[
-{time: '18:00', event: 'Find a ferret'}
-]
-
-}
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>></code>:
-        An Array of Events.
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='addleadingzeroiflessthanten'>
       addLeadingZeroIfLessThanTen
     </h3>
@@ -1479,81 +1349,41 @@ For example:
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='gettwelvehourtimeslots'>
-      getTwelveHourTimeSlots
+    <h3 class='fl m0' id='getjsdate'>
+      getJsDate
     </h3>
     
     
   </div>
   
 
-  <p>Returns 24 time slots, from 12:00 AM - 12:00 PM</p>
+  <p>Given a valid date string, or Date object, returns a Date object.</p>
 
 
-  <div class='pre p1 fill-light mt0'>getTwelveHourTimeSlots(): [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</div>
-  
-  
-
-  
-  
-  
+  <div class='pre p1 fill-light mt0'>getJsDate(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
   
   
 
   
-
+  
+  
+  
   
 
   
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</code>:
-        An array of time slots corresponding to 12-hour time.
-
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-    
-  
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>date</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
+	    A valid date or date string.
 
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
+          </div>
           
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='gettwentyfourhourtimeslots'>
-      getTwentyFourHourTimeSlots
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Returns 24 time slots, from 00:00 - 24:00</p>
-
-
-  <div class='pre p1 fill-light mt0'>getTwentyFourHourTimeSlots(): [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</div>
-  
-  
-
-  
-  
-  
-  
-  
-
+        </div>
+      
+    </div>
   
 
   
@@ -1561,8 +1391,8 @@ For example:
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</code>:
-        An array of time slot corresponding to 24-hour time.
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
+        A JS Date object
 
       
     
@@ -1769,6 +1599,196 @@ will return 'AM', otherwise returns 'PM'.
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         The corresponding value in 12-hour time, with the appropriate time
 period (AM | PM).
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='makeeventfinder'>
+      makeEventFinder
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Given a data set where events can be obtained as date properties off an object, return the set of events
+for a given date.</p>
+
+
+  <div class='pre p1 fill-light mt0'>makeEventFinder(data: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An object that whose keys are string dates that map dates to sets of events.
+For example:
+{
+'02/12/2017': 
+[
+{time: '09:00', event: 'Purchase a parrot'}
+]
+,
+'09/21/2017': 
+[
+{time: '18:00', event: 'Find a ferret'}
+]
+
+}
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>></code>:
+        An Array of Events.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gettwelvehourtimeslots'>
+      getTwelveHourTimeSlots
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns 24 time slots, from 12:00 AM - 12:00 PM</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTwelveHourTimeSlots(): [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</code>:
+        An array of time slots corresponding to 12-hour time.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gettwentyfourhourtimeslots'>
+      getTwentyFourHourTimeSlots
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns 24 time slots, from 00:00 - 24:00</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTwentyFourHourTimeSlots(): [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</code>:
+        An array of time slot corresponding to 24-hour time.
 
       
     
@@ -2415,6 +2435,22 @@ number of days is 6.
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Get a week using all the defaults</span>
+<span class="hljs-keyword">const</span> week = getWeek({<span class="hljs-attr">startDate</span>: <span class="hljs-string">'03/17/2016'</span>});
+
+<span class="hljs-comment">// Override a default (the date formatter)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">americanFormat</span>(<span class="hljs-params">date</span>) </span>{
+  <span class="hljs-keyword">const</span> day = addLeadingZeroIfLessThanTen(date.getDate());
+  <span class="hljs-keyword">const</span> month = addLeadingZeroIfLessThanTen(date.getMonth() + <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${month}</span>/<span class="hljs-subst">${day}</span>/<span class="hljs-subst">${date.getFullYear()}</span>`</span>;
+}
+
+<span class="hljs-keyword">const</span> week = getWeek({<span class="hljs-attr">startDate</span>: <span class="hljs-string">'03/17/2017'</span>, <span class="hljs-attr">formatDate</span>: americanFormat})</pre>
+    
+  
 
   
 
@@ -2442,7 +2478,7 @@ number of days is 6.
   <p>Returns a set of <em>n</em> weeks, when given a start seed.</p>
 
 
-  <div class='pre p1 fill-light mt0'>getNWeeks(startDate: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, numOfWeeks: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Day></div>
+  <div class='pre p1 fill-light mt0'>getNWeeks(startDate: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>), getEvents: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, formatDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, numOfWeeks: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, numOfDaysInWeek: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, $0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Day></div>
   
   
 
@@ -2495,6 +2531,15 @@ date passed into it to the beginning of the week.
       
         <div class='space-bottom0'>
           <div>
+            <span class='code bold'>numOfDaysInWeek</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The number of days in the week
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
             <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    
           </div>
@@ -2536,6 +2581,14 @@ date passed into it to the beginning of the week.
                   <td class='break-word'><span></span></td>
                 </tr>
               
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.numOfDaysInWeek</span> <code class='quiet'>any</code>
+                  
+                    (default <code>6</code>)
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
+              
             </tbody>
           </table>
           
@@ -2558,6 +2611,16 @@ date passed into it to the beginning of the week.
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Get a week using all the defaults</span>
+<span class="hljs-keyword">const</span> week = getNWeeks({<span class="hljs-attr">startDate</span>: <span class="hljs-string">'03/17/2016'</span>});
+
+<span class="hljs-comment">// Override a default (the days in a week)</span>
+<span class="hljs-keyword">const</span> week = getWeek({<span class="hljs-attr">startDate</span>: <span class="hljs-string">'03/17/2017'</span>, <span class="hljs-attr">numOfDaysInWeek</span>: <span class="hljs-number">5</span>})</pre>
+    
   
 
   
@@ -2703,6 +2766,91 @@ date passed into it to the beginning of the week.
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Get a week using all the defaults</span>
+<span class="hljs-keyword">const</span> week = getNWeeks({<span class="hljs-attr">startDate</span>: <span class="hljs-string">'03/17/2016'</span>});
+
+<span class="hljs-comment">// Override a default (the days in a week)</span>
+<span class="hljs-keyword">const</span> week = getWeek({<span class="hljs-attr">startDate</span>: <span class="hljs-string">'03/17/2017'</span>, <span class="hljs-attr">numOfDaysInWeek</span>: <span class="hljs-number">5</span>})</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getnextweek'>
+      getNextWeek
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns a Date set to the corresponding day in the next week</p>
+
+
+  <div class='pre p1 fill-light mt0'>getNextWeek(date: any, daysInWeek: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>date</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>daysInWeek</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
 
   
 
@@ -2769,6 +2917,81 @@ date passed into it to the beginning of the week.
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code>Day</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getprevweek'>
+      getPrevWeek
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns a Date set to the corresponding day in the previous week</p>
+
+
+  <div class='pre p1 fill-light mt0'>getPrevWeek(date: any, daysInWeek: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>date</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>daysInWeek</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
         
 
       
@@ -2931,6 +3154,21 @@ corresponding to the weeks of the month. For example, the default value is:
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> tagesnamen = {
+  <span class="hljs-number">0</span>: <span class="hljs-string">'Sontag'</span>,
+  <span class="hljs-number">1</span>: <span class="hljs-string">'Montag'</span>,
+  <span class="hljs-number">2</span>: <span class="hljs-string">'Dienstag'</span>,
+  <span class="hljs-number">3</span>: <span class="hljs-string">'Mittwoch'</span>,
+  <span class="hljs-number">4</span>: <span class="hljs-string">'Donnerstag'</span>,
+  <span class="hljs-number">5</span>: <span class="hljs-string">'Fritag'</span>,
+  <span class="hljs-number">6</span>: <span class="hljs-string">'Samstag'</span>
+};
+<span class="hljs-keyword">const</span> nameFinden = weekDayNameFinder(tagesnamen);</pre>
+    
+  
 
   
 
@@ -2955,7 +3193,7 @@ corresponding to the weeks of the month. For example, the default value is:
   </div>
   
 
-  <p>Proxy for getWeekNumber</p>
+  <p>Getter for getWeekNumber</p>
 
 
   <div class='pre p1 fill-light mt0'>getWeekNumber(date: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
