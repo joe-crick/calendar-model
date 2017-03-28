@@ -1,10 +1,10 @@
-import {addLeadingZeroIfLessThanTen, formatDate as format} from './utils/format';
+import {addLeadingZeroIfLessThanTen, formatDate as format} from './date-utils/format';
 import {getJsDate} from './date-utils/get_date';
 import noOp from './utils/no-op';
 import getRangeOfDates from './date-utils/get_range_of_dates';
 import addDays from './date-utils/adjust_days';
 import getWeekNumber from './date-utils/get_week_number';
-import {getTwelveHourTime} from './hours';
+import {getTwelveHourTime} from './date-utils/time_utils';
 
 /**
  * @description CONSTRUCTOR: Returns a day object, which is a JS Date, a formatted string version of the date, and some convenience

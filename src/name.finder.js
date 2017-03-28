@@ -4,7 +4,7 @@
  * @param {Object} nameSet
  * @returns {getName}
  */
-export default function numToNameFinder(nameSet) {
+export default function makeNumToNameFinder(nameSet) {
     return function getName(num) {
         return nameSet[num];
     };

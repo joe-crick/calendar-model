@@ -1,6 +1,6 @@
 import parse from './parse.js';
 
-module.exports = function getWeekNumber(dirtyDate) {
+export default function getWeekNumber(dirtyDate) {
   const date = parse(dirtyDate);
   let instance;
 

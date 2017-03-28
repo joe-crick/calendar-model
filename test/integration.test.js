@@ -1,6 +1,6 @@
 import test from 'tape';
 import {getNWeeks} from '../src/week';
-import makeEventFinder from '../src/event';
+import makeEventFinder from '../src/event.finder';
 
 const TEST_DATE = '03/01/2017';
 
