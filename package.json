@@ -9,9 +9,10 @@
   "scripts": {
     "test": "babel-tape-runner test.js | faucet",
     "build:js": "babel src -s --out-dir lib",
-    "build:docs": "documentation build ./src/*.js --a undefined -f html -o docs",
-    "clean": "rimraf lib",
-    "build": "npm-run-all test clean build:js build:docs"
+    "build:cal-docs": "documentation build ./src/day.js ./src/hours.js ./src/month.js ./src/week.js --shallow --a undefined -f html -o docs",
+    "build:util-docs": "documentation build ./src/date-utils/*.js ./src/utils/*.js --a undefined -f html -o docs/utils",
+    "clean": "rimraf lib && rimraf docs",
+    "build": "npm-run-all test clean build:js build:cal-docs build:util-docs"
   },
   "devDependencies": {
     "babel": "^6.23.0",

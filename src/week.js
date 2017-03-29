@@ -2,13 +2,15 @@ import startOfWeek from './date-utils/start_of_week';
 import {getNDays} from './day';
 import {getNextWeek} from './date-utils/week_utils';
 
+const DAYS_IN_WEEK = 6;
+
 /**
  * @desc Creates an array of dates that corresponds to a week range.
  * @param {String | Date} startDate  A date in the week. This function will convert any
  * date passed into it to the beginning of the week.
- * @param {Function} getEvents An event binding function. A default function is provided.
- * @param {Function} formatDate A date formatting function. A default function is provided.
- * @param {number} numOfDays The number of days in a week. Zero-based, i.e., the default
+ * @param {Function} [getEvents=getEvents] getEvents An event binding function. A default function is provided.
+ * @param {Function} [formatDate=format] formatDate A date formatting function. A default function is provided.
+ * @param {number} [numOfDays=6] numOfDays The number of days in a week. Zero-based, i.e., the default
  * number of days is 6.
  * @example
  * // Get a week using all the defaults
@@ -25,7 +27,7 @@ import {getNextWeek} from './date-utils/week_utils';
  *
  * @returns {Array<Day>} An array of Days.
  */
-export function getWeek({startDate, getEvents, formatDate, numOfDays = 6}) {
+export function getWeek({startDate, getEvents, formatDate, numOfDays = DAYS_IN_WEEK}) {
   return getNDays({startDate: startOfWeek(startDate), numOfDays, getEvents, formatDate});
 }
 
@@ -33,10 +35,10 @@ export function getWeek({startDate, getEvents, formatDate, numOfDays = 6}) {
  * @desc Returns a set of _n_ weeks, when given a start seed.
  * @param {String | Date} startDate  A date in the week. This function will convert any
  * date passed into it to the beginning of the week.
- * @param {Function} getEvents An event binding function. A default function is provided.
- * @param {Function} formatDate A date formatting function. A default function is provided.
+ * @param {Function} [getEvents=getEvents] getEvents An event binding function.
+ * @param {Function} [formatDate=format] formatDate A date formatting function.
  * @param {number} numOfWeeks The number of weeks to return.
- * @param {number} numOfDaysInWeek The number of days in the week
+ * @param {number} [numOfDaysInWeek=6] numOfDaysInWeek The number of days in the week
  * @example
  * // Get a week using all the defaults
  * const week = getNWeeks({startDate: '03/17/2016'});
@@ -46,7 +48,7 @@ export function getWeek({startDate, getEvents, formatDate, numOfDays = 6}) {
  *
  * @returns {Array<Day>} A one-dimensional array of Days
  */
-export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks, numOfDaysInWeek = 6}) {
+export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks, numOfDaysInWeek = DAYS_IN_WEEK}) {
   if (!startDate) {
     return [];
   }
@@ -62,8 +64,8 @@ export function getNWeeks({startDate, getEvents, formatDate, numOfWeeks, numOfDa
  * @desc Returns a nested array of Days. Each set of days is grouped in a week-long array.
  * @param {string | Date} startDate  A date in the week. This function will convert any
  * date passed into it to the beginning of the week.
- * @param {Function} getEvents An event binding function. A default function is provided.
- * @param {Function} formatDate A date formatting function. A default function is provided.
+ * @param {Function} [getEvents=getEvents] getEvents An event binding function.
+ * @param {Function} [formatDate=format] formatDate A date formatting function.
  * @param {number} numOfWeeks The number of weeks to return.
  * @example
  * // Get a week using all the defaults

@@ -9,9 +9,9 @@ const WEEKS_IN_MONTH = 5;
  * the actual days of the month.
  * @param {String | Date} startDate A date in the month. This function will convert any date passed into it
  * to the format: MM/01/YYYY.
- * @param {Function} getEvents
- * @param {Function} formatDate
- * @param {number} weeksInMonth
+ * @param {Function} [getEvents=getEvents] getEvents An event binder
+ * @param {Function} [formatDate=format] formatDate A date formatter
+ * @param {number} [weeksInMonth=5] weeksInMonth The number of weeks in the month
  * @returns {Array<Day>} A one-dimensional array of Days
  */
 export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {
@@ -23,9 +23,9 @@ export function getMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS
  *
  * @param {String | Date} startDate A date in the month. This function will convert any date passed into it
  * to the format: MM/01/YYYY.
- * @param {Function} getEvents
- * @param {Function} formatDate
- * @param {number} weeksInMonth
+ * @param {Function} [getEvents=getEvents] getEvents An event binder
+ * @param {Function} [formatDate=format] formatDate A date formatter
+ * @param {number} [weeksInMonth=5] weeksInMonth The number of weeks in the month
  * @returns {Array<Array<Day>>} A two-dimensional array of Days. Each sub-array contains a week's worth of days. Useful for tabular data representation.
  */
 export function getNestedMonth({startDate, getEvents, formatDate, weeksInMonth = WEEKS_IN_MONTH}) {

@@ -13,29 +13,29 @@ import {getTwelveHourTime} from './date-utils/time_utils';
  * _formatDate_: A function that returns a valid formatted date. Defaults to date-fns format function, International date format.
  *
  * @param {string | Date} date A valid date or date string.
- * @param {Function} getEvents An event binding function. A default function is provided.
- * @param {Function} formatDate A date formatting function. A default function is provided.
- * @param {Function} toISOString
+ * @param {Function} [getEvents=noOp] getEvents An event binding function. A default function is provided.
+ * @param {Function} [formatDate=format] formatDate A date formatting function. A default function is provided.
+ * @param {Function} [toISOString=Date.prototype.toISOString] toISOString
  * @returns {Day}
  */
 export function getDay({date, getEvents = noOp, formatDate = format, toISOString = Date.prototype.toISOString}) {
   return {
     date: getJsDate(date),
     /**
-     * @return {string}
+     * @return {string} A date formatted in accordance with the format defined by the format function
      */
     get formattedDate() {
       return formatDate(this.date);
     },
     /**
-     * @return {string}
+     * @return {string} The date in 24-hour time
      */
     get twentyFourHourTime() {
       return this.date.toTimeString().split(' ')[0];
     },
     /**
      * @note Choosing to implement a more lengthy algorithm to support older browsers
-     * @return {string}
+     * @return {string} The date in 12 hour time
      */
     get twelveHourTime() {
       const date = this.date;
@@ -46,20 +46,20 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
     },
     /**
      * @desc Convenience method
-     * @return {number}
+     * @return {number} The day of the week
      */
     get dayOfWeek() {
       return this.date.getDay();
     },
     /**
      * @desc Convenience method
-     * @return {number}
+     * @return {number} The day of the month
      */
     get dayOfMonth() {
       return this.date.getDate();
     },
     /**
-     * @return {number}
+     * @return {number} The week of the year
      */
     get weekOfYear() {
       return getWeekNumber(this.date);
@@ -68,26 +68,26 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
      * @desc JS' Date object takes a 1-based scheme for date creation, but returns a 0-based scheme
      * on month queries. This interface adds a bit of sanity, so that we're only ever dealing with
      * one-based month schemes.
-     * @return {number}
+     * @return {number} The month (one-based)
      */
     get month() {
       return this.date.getMonth() + 1;
     },
     /**
      * @desc Convenience method
-     * @return {number}
+     * @return {number} The full year
      */
     get year() {
       return this.date.getFullYear();
     },
     /**
-     * @return {string}
+     * @return {string} The ISO date
      */
     get isoDate() {
       return toISOString.call(this.date, this.date);
     },
     /**
-     * @return {Array}
+     * @return {Array} The events associated with this day
      */
     get events() {
       return getEvents(this.date);
@@ -98,13 +98,13 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
 
 /**
  * @desc Creates an array of dates that corresponds to a range
- * @param {String | Date} startDate
- * @param {number} numOfDays
- * @param {Function} getEvents
- * @param {Function} formatDate
- * @returns {Array<Day>}
+ * @param {String | Date} startDate The day to begin collecting days from
+ * @param {number} numOfDays The number of days to collect
+ * @param {Function} [getEvents=noOp] getEvents An event binder
+ * @param {Function} [formatDate=format] formatDate A date formatter
+ * @returns {Array<Day>} A set of N Days
  */
-export function getNDays({startDate, numOfDays, getEvents, formatDate}) {
+export function getNDays({startDate, numOfDays, getEvents = noOp, formatDate = format}) {
   const endDate = addDays(startDate, numOfDays);
   return getRangeOfDates(startDate, endDate).map(date => getDay({date, getEvents, formatDate}));
 }

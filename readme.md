@@ -209,7 +209,7 @@ You can present the calendar data in whatever format you like. Below is an examp
                                     )
                                 })}
                                 </ul>
-                            </div >
+                            </div>
                         </td>);
                     })}                                             
             </tr>);
