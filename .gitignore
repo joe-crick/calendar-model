@@ -1,6 +1,6 @@
 node_modules
 lib
-.vscode
+.debug
 npm-debug.log
 *.xml
 .idea

@@ -100,11 +100,11 @@ export function getDay({date, getEvents = noOp, formatDate = format, toISOString
  * @desc Creates an array of dates that corresponds to a range
  * @param {String | Date} startDate The day to begin collecting days from
  * @param {number} numOfDays The number of days to collect
- * @param {Function} [getEvents=noOp] getEvents An event binder
- * @param {Function} [formatDate=format] formatDate A date formatter
+ * @param {Function} getEvents An event binder
+ * @param {Function} formatDate A date formatter
  * @returns {Array<Day>} A set of N Days
  */
-export function getNDays({startDate, numOfDays, getEvents = noOp, formatDate = format}) {
+export function getNDays({startDate, numOfDays, getEvents, formatDate}) {
   const endDate = addDays(startDate, numOfDays);
   return getRangeOfDates(startDate, endDate).map(date => getDay({date, getEvents, formatDate}));
 }
