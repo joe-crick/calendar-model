@@ -7,8 +7,7 @@
   "author": "joe@josephcrick.com",
   "license": "MIT",
   "scripts": {
-    "tape-tests": "babel-tape-runner test.js | faucet",
-    "test": "npm-run-all tape-tests",
+    "test": "babel-tape-runner test.js | faucet",
     "build:js": "babel src -s --out-dir lib",
     "build:docs": "documentation build ./src/*.js --a undefined -f html -o docs",
     "clean": "rimraf lib",
