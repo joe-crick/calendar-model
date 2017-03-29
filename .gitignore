@@ -1,6 +1,5 @@
 node_modules
 lib
 .debug
-npm-debug.log
 *.xml
 .idea
