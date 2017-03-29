@@ -1,5 +1,5 @@
 import test from 'tape';
-import weekdaySet from '../src/date-utils/weeday_set';
+import weekdaySet from '../../src/date-utils/weeday_set';
 
 test('Weekday Set', nest => {
   nest.test('Returns a set of days of the week', assert => {

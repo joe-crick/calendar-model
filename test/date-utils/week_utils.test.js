@@ -1,5 +1,5 @@
 import test from 'tape';
-import {getNextWeekDay, getPrevWeekDay, weekDayNameFinder, getWeekNumber} from '../src/date-utils/week_utils';
+import {getNextWeekDay, getPrevWeekDay, weekDayNameFinder, getWeekNumber} from '../../src/date-utils/week_utils';
 
 const TEST_DATE = '03.01.2017';
 

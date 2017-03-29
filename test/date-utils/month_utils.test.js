@@ -1,5 +1,5 @@
 import test from 'tape';
-import {monthNameFinder, getNextMonth, getPrevMonth} from '../src/date-utils/month_utils';
+import {monthNameFinder, getNextMonth, getPrevMonth} from '../../src/date-utils/month_utils';
 
 const TEST_DATE = '03.01.2017';
 

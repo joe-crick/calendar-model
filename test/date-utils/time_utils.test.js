@@ -1,5 +1,5 @@
 import test from 'tape';
-import * as time from '../src/date-utils/time_utils';
+import * as time from '../../src/date-utils/time_utils';
 
 test('Calendar Model: Time', nest => {
   nest.test('Should return the correct value for a twelve hour clock', assert => {
