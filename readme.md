@@ -121,7 +121,7 @@ export default function getNWeeks({date, numOfWeeks});
 // @return {Function}
 export default function initCalendar(calendarData) {
 
-    // makeEventFinder returns a function
+    // makeEventFinder returns a stateful function that has access to calendarData
     const getEvents = makeEventFinder(calendarData);
 
     // @return {Array<Day>}
@@ -185,10 +185,10 @@ The above code is, in fact, Calendar Model's default Event Binder, which can be 
 ####  5.3. <a name='DefinetheDatasPresentation'></a>Define the Data's Presentation
 
 You can present the calendar data in whatever format you like. Below is an example of rendering a
- month-based calendar using JSX (when presenting tabular data for multiple weeks, use a nested
- result set)::
+ month-based calendar using JSX (when presenting tabular data for multiple weeks, a nested
+ result set is recommended):
 
-```jsx
+```js
 <table className="calendar-example">
     <TableHead />
     <tbody>
