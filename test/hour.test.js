@@ -1,5 +1,5 @@
 import test from 'tape';
-import * as hours from '../src/hours';
+import * as hours from '../src/hour';
 
 test('Calendar Model: Hours', nest => {
   nest.test('Should return an Array of the correct hours for a twelve-hour clock', assert => {

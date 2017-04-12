@@ -1,6 +1,8 @@
 import {addLeadingZeroIfLessThanTen} from './date-utils/format';
 import * as time from './date-utils/time_utils';
 
+// TODO: Make a comprehensive build, inclusive of all functions
+
 /**
  * @desc Returns 24 time slots, from 12:00 AM - 12:00 PM
  * @returns {[string]} An array of time slots corresponding to 12-hour time.
