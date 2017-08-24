@@ -24,7 +24,7 @@ Calendar Model
 
 NOTE: For full details, see the [online API docs](https://joe-crick.gitbooks.io/calendar-model/content/)
 
-The idea behind Calendar Model is simple: Make it easy to get and work with calendrical data. Calendar Model only cares about the data, leaving the presentation of the data up to you. In addition, while Calendar Model provides default implementations for all its functionality, you can override most of the defaults.
+The idea behind Calendar Model is simple: Make it easy to get and work with calendrical data. Calendar Model only cares about the data. It leaves the presentation of the data up to you. In addition, while Calendar Model provides default implementations for all its functionality, you can override most of the defaults.
 
 Calendar Model is implemented as a set of functions. These functions can be queried to return result sets. Each result set contains a collection \(Array\) of `Day` objects.
 
