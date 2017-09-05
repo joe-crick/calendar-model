@@ -37,7 +37,7 @@ Calendar Model conforms to the following pattern:
 --> Input: Date
 --> Output: Day
 
-Calendar Model exposes functions that return the following categories of result sets:
+Calendar Model exposes functions that return the following types of result sets:
 
 * Month \(by default 5 weeks\)
 * Week \(by default 7 days\)
