@@ -227,3 +227,5 @@ Calendar Model exposes several helper methods:
 * `weekDayNameFinder`: Returns the text name for a given week.
 * `getNextWeekDay`: Given a seed date, returns a Day 7 days in the future.
 * `getPrevWeekDay`: Given a seed date, returns a Day 7 days in the past.
+
+Enjoy!
